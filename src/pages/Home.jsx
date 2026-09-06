@@ -122,7 +122,13 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="tl-role">
-                    AI Team Leader / AI Engineer <span>· SotaTek</span>
+                    AI Team Leader / AI Engineer{" "}
+                    <span>
+                      ·{" "}
+                      <a href="https://www.sotatek.com/" target="_blank" rel="noopener noreferrer">
+                        SotaTek
+                      </a>
+                    </span>
                   </div>
                   <p className="tl-desc">
                     Leading AI sub-teams across generative and computer-vision client projects — from technical

@@ -145,6 +145,8 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
 .tl-date{ font-family:'Space Mono', monospace; font-size:12.5px; color:var(--ink-faint); padding-top:3px; }
 .tl-role{ font-size:18px; font-weight:600; color:var(--ink); }
 .tl-role span{ color:var(--ink-dim); font-weight:400; }
+.tl-role span a{ text-decoration:none; color:var(--ink-dim); border-bottom:1px solid var(--border); }
+.tl-role span a:hover{ color:var(--accent); border-bottom-color:var(--accent); }
 .tl-desc{ margin-top:8px; color:#b9bfcf; font-size:15.5px; max-width:60ch; }
 @media (max-width:600px){ .tl-item{ grid-template-columns:1fr; gap:6px; } }
 

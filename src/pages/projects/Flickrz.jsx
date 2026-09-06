@@ -107,7 +107,9 @@ export default function Flickrz() {
       <header className="case-hero">
         <div className="wrap">
           <div className="case-kicker">CASE STUDY · 01 / 03</div>
-          <h1 className="case-title">Flickrz</h1>
+          <h1 className="case-title flickrz-wordmark">
+            <img src="/assets/flickrz/logo-flickrz.svg" alt="Flickrz" />
+          </h1>
           <p className="case-tagline">
             A <strong>multi-agent AI pipeline</strong> that writes, illustrates, and quality-checks Korean webtoon
             comics — built for a distribution platform with <strong>60M+ readers</strong>, with human reviewers

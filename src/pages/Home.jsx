@@ -163,7 +163,7 @@ export default function Home() {
 
             <div className="proj-grid">
               <Link className="proj-card-link" to="/projects/flickrz">
-                <article className="proj-card bracket">
+                <article className="proj-card bracket proj-card--orange">
                   <div className="bk-tr" />
                   <div className="bk-bl" />
                   <div className="proj-top">
@@ -191,7 +191,7 @@ export default function Home() {
               </Link>
 
               <Link className="proj-card-link" to="/projects/makinarocks">
-                <article className="proj-card bracket">
+                <article className="proj-card bracket proj-card--green">
                   <div className="bk-tr" />
                   <div className="bk-bl" />
                   <div className="proj-top">
@@ -217,7 +217,7 @@ export default function Home() {
                 </article>
               </Link>
 
-              <article className="proj-card bracket">
+              <article className="proj-card bracket proj-card--blue">
                 <div className="bk-tr" />
                 <div className="bk-bl" />
                 <div className="proj-top">
@@ -235,13 +235,13 @@ export default function Home() {
                   <span className="tag">Multi-Agent</span>
                   <span className="tag">FastAPI</span>
                 </div>
-                <a className="proj-link" href="https://bloomtech.ag/" target="_blank" rel="noopener noreferrer">
-                  bloomtech.ag ↗
-                </a>
+                <div className="case-link">
+                  View case study <span className="arrow">→</span>
+                </div>
               </article>
 
               <Link className="proj-card-link" to="/projects/trynectar">
-                <article className="proj-card bracket">
+                <article className="proj-card bracket proj-card--redorange">
                   <div className="bk-tr" />
                   <div className="bk-bl" />
                   <div className="proj-top">

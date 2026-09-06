@@ -1,0 +1,8 @@
+node_modules
+dist
+.DS_Store
+
+# Internal admin mockup — dev-only, never publish source or its exclusive assets
+src/mockups/
+public/assets/flickrz/scene-cut*.jpg
+public/assets/flickrz/jiho-sketch*.jpeg

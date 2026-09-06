@@ -4,6 +4,7 @@ export default function ShotsGrid({ shots }) {
       {shots.map((s) => (
         <div className="shot-card" key={s.file}>
           <div className="shot-frame" data-hint={`drop ${s.file} here`}>
+            <span className="shot-frame-glow" aria-hidden="true" />
             <img
               src={`/assets/flickrz/${s.file}`}
               alt={s.alt}

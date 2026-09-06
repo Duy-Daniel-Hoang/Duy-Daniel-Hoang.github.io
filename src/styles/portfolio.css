@@ -213,7 +213,6 @@ footer{ padding:34px 0 50px; }
 .afd-node rect{ transition:stroke .2s ease, stroke-width .2s ease, filter .2s ease; cursor:default; }
 .afd-node:hover rect{
   stroke:var(--accent); stroke-width:2px; stroke-dasharray:none;
-  filter:drop-shadow(0 0 3px var(--accent)) drop-shadow(0 0 8px var(--accent));
 }
 .afd-gate-node rect{ cursor:default; }
 .afd-subnode rect{ transition:stroke .25s ease; }
@@ -291,16 +290,6 @@ footer{ padding:34px 0 50px; }
   .pipeline-diagram-card:hover{ transform:scale(1); box-shadow:none; }
 }
 
-.dz-wrap{ overflow:hidden; border-radius:4px; cursor:grab; touch-action:none; -webkit-user-select:none; user-select:none; }
-.dz-wrap.dz-dragging{ cursor:grabbing; }
-.dz-pan, .dz-scale{
-  transition:transform 480ms cubic-bezier(0.34, 1.56, 0.64, 1);
-  will-change:transform;
-  transform:translateZ(0);
-}
-.dz-scale{ transform-origin:50% 50%; }
-.dz-wrap.dz-dragging .dz-pan, .dz-wrap.dz-dragging .dz-scale{ transition:none; }
-
 .agent-flow{ margin-top:28px; display:flex; flex-direction:column; gap:0; }
 .agent-step{ display:grid; grid-template-columns:34px 1fr; gap:16px; padding:16px 0; position:relative; }
 .agent-step:not(:last-child)::after{
@@ -312,14 +301,14 @@ footer{ padding:34px 0 50px; }
   background:linear-gradient(to top, color-mix(in srgb, var(--accent) 20%, transparent) 0%, transparent 75%);
   opacity:0; transition:opacity .35s ease;
 }
-.agent-step:hover::before{ opacity:1; }
+.agent-step:hover::before, .agent-step.is-active::before{ opacity:1; }
 .agent-dot{
   width:34px; height:34px; border-radius:50%; border:2px solid var(--border); display:flex; align-items:center; justify-content:center;
   font-family:'Space Mono', monospace; font-size:12px; color:var(--ink-dim); background:var(--bg); z-index:1; position:relative;
   transition:border-color .25s ease, color .25s ease, box-shadow .25s ease;
 }
 .agent-step.gate .agent-dot{ border-color:var(--accent); color:var(--accent); }
-.agent-step:hover .agent-dot{
+.agent-step:hover .agent-dot, .agent-step.is-active .agent-dot{
   border-color:var(--accent); color:var(--accent);
   box-shadow:0 0 0 1px var(--accent), 0 0 6px 1px var(--accent), 0 0 14px 3px color-mix(in srgb, var(--accent) 60%, transparent);
 }
@@ -351,6 +340,12 @@ footer{ padding:34px 0 50px; }
 /* ---------- product screens gallery ---------- */
 .shots-grid{ margin-top:28px; display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:22px; }
 .shot-frame{ position:relative; aspect-ratio:16/10; border-radius:6px; overflow:hidden; background:var(--surface-2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; }
+.shot-frame-glow{
+  position:absolute; left:0; right:0; bottom:0; height:70%; pointer-events:none; z-index:1;
+  background:radial-gradient(ellipse 90% 100% at 50% 120%, color-mix(in srgb, var(--accent) 55%, transparent) 0%, transparent 70%);
+  opacity:0; transition:opacity .35s ease;
+}
+.shot-frame:hover .shot-frame-glow{ opacity:1; }
 .shot-frame img{ width:100%; height:100%; object-fit:cover; object-position:top; display:block; }
 .shot-frame.missing img{ display:none; }
 .shot-frame.missing::after{ content:attr(data-hint); font-family:'Space Mono', monospace; font-size:11px; color:var(--ink-faint); text-align:center; padding:0 14px; }

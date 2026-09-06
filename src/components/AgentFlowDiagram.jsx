@@ -29,7 +29,7 @@ export default function AgentFlowDiagram() {
       <g fill="none" stroke="var(--accent)" strokeWidth="1.3" strokeDasharray="4,4" markerEnd="url(#afdReject)">
         <path d="M20,212 C-20,212 -20,100 70,100" />
         <path d="M360,312 C400,312 400,100 310,100" />
-        <path d="M90,404 C-55,404 -55,76 100,76" />
+        <path d="M90,404 C-20,404 -20,76 100,76" />
       </g>
 
       {/* User Brief */}

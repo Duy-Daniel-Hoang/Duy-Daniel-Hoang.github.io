@@ -2,7 +2,6 @@ import CaseNav from "../../components/CaseNav.jsx";
 import CaseFoot from "../../components/CaseFoot.jsx";
 import AgentFlow from "../../components/AgentFlow.jsx";
 import AgentFlowDiagram from "../../components/AgentFlowDiagram.jsx";
-import DraggableZoom from "../../components/DraggableZoom.jsx";
 import ShotsGrid from "../../components/ShotsGrid.jsx";
 import EqualizerWave from "../../components/EqualizerWave.jsx";
 import CapabilityGrid from "../../components/CapabilityGrid.jsx";
@@ -182,9 +181,7 @@ export default function Flickrz() {
             <div className="pipeline-split">
               <AgentFlow steps={STEPS} />
               <div className="pipeline-diagram-card">
-                <DraggableZoom>
-                  <AgentFlowDiagram />
-                </DraggableZoom>
+                <AgentFlowDiagram />
               </div>
             </div>
 

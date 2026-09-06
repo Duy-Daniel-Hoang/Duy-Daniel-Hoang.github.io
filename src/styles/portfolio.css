@@ -160,7 +160,13 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
 .proj-grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
 @media (max-width:760px){ .proj-grid{ grid-template-columns:1fr; } }
 .proj-card{ background-color:var(--surface); background-repeat:no-repeat; }
-.proj-card--orange{ background-image:linear-gradient(to top, color-mix(in srgb, #ff8a3d 40%, transparent) 0%, transparent 65%); }
+.proj-card--orange{
+  background-image:
+    linear-gradient(to top, color-mix(in srgb, #ff8a3d 35%, transparent) 0%, transparent 65%),
+    linear-gradient(rgba(12,15,21,0.82), rgba(12,15,21,0.86)),
+    url("/assets/flickrz/thumbnail.webp");
+  background-size:cover; background-position:center 30%;
+}
 .proj-card--green{ background-image:linear-gradient(to top, color-mix(in srgb, #34d399 38%, transparent) 0%, transparent 65%); }
 .proj-card--blue{ background-image:linear-gradient(to top, color-mix(in srgb, #4f8cff 38%, transparent) 0%, transparent 65%); }
 .proj-card--redorange{ background-image:linear-gradient(to top, color-mix(in srgb, #ff5a36 38%, transparent) 0%, transparent 65%); }

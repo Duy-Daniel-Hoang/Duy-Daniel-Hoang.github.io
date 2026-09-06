@@ -207,7 +207,13 @@ export default function Flickrz() {
                 <span className="age-badge age-badge--ok">All ages</span>
               </div>
               <div className="demo-video-frame demo-video-frame--full">
-                <video src="/assets/flickrz/vid3.mp4" controls playsInline preload="metadata" />
+                <video
+                  src="/assets/flickrz/vid3.mp4"
+                  poster="/assets/flickrz/vid3-poster.jpg"
+                  controls
+                  playsInline
+                  preload="metadata"
+                />
               </div>
             </div>
 
@@ -218,10 +224,22 @@ export default function Flickrz() {
               </div>
               <div className="demo-video-grid">
                 <div className="demo-video-frame">
-                  <video src="/assets/flickrz/vid1.mp4" controls playsInline preload="metadata" />
+                  <video
+                    src="/assets/flickrz/vid1.mp4"
+                    poster="/assets/flickrz/vid1-poster.jpg"
+                    controls
+                    playsInline
+                    preload="metadata"
+                  />
                 </div>
                 <div className="demo-video-frame">
-                  <video src="/assets/flickrz/vid2.mp4" controls playsInline preload="metadata" />
+                  <video
+                    src="/assets/flickrz/vid2.mp4"
+                    poster="/assets/flickrz/vid2-poster.jpg"
+                    controls
+                    playsInline
+                    preload="metadata"
+                  />
                 </div>
               </div>
             </div>

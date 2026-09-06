@@ -143,7 +143,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="tl-role">
-                    AI Engineer <span>· Hung Ha Pay</span>
+                    AI Engineer <span>· BHSoft</span>
                   </div>
                   <p className="tl-desc">
                     Five years building and deploying early AI/ML systems — the foundation the later computer-vision

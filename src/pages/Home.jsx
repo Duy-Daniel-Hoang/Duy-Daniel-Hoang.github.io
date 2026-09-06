@@ -59,7 +59,7 @@ export default function Home() {
                 HANOI, VIETNAM &nbsp;·&nbsp; AI TEAM LEADER &nbsp;·&nbsp; OPEN TO NEW ROLES
               </div>
               <div className="hero-cta">
-                <a className="btn primary" href="https://www.linkedin.com/in/duydaniel" target="_blank" rel="noopener noreferrer">
+                <a className="btn linkedin" href="https://www.linkedin.com/in/duydaniel" target="_blank" rel="noopener noreferrer">
                   LinkedIn ↗
                 </a>
                 <a className="btn" href="#work">See the work</a>

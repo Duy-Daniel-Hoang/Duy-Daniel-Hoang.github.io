@@ -113,6 +113,8 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
 .btn:hover{ border-color:var(--accent); color:var(--accent); }
 .btn.primary{ background:var(--accent); border-color:var(--accent); color:#1a0f05; font-weight:700; }
 .btn.primary:hover{ background:#ff9a58; color:#1a0f05; }
+.btn.linkedin{ background:#0a66c2; border-color:#0a66c2; color:#fff; font-weight:700; }
+.btn.linkedin:hover{ background:#0b74d4; color:#fff; }
 
 @keyframes rise{ from{ opacity:0; transform:translateY(10px);} to{ opacity:1; transform:translateY(0);} }
 .rise{ animation:rise .6s ease both; }

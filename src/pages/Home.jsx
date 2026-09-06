@@ -321,7 +321,7 @@ export default function Home() {
               <div className="ed-block">
                 <h3>Education</h3>
                 <div className="ed-line">
-                  <b>Hanoi University of Science and Technology</b> — Computer Science
+                  <b>Hanoi University of Science and Technology</b> — Information Technology (Global ICT)
                 </div>
               </div>
               <div className="ed-block">

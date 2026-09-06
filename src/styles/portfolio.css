@@ -276,7 +276,14 @@ footer{ padding:34px 0 50px; }
 .case-title{ font-family:'Space Mono', monospace; font-weight:700; font-size:clamp(28px,4.4vw,42px); line-height:1.1; letter-spacing:-0.01em; }
 
 .flickrz-wordmark{ margin:4px 0; }
-.flickrz-wordmark img{ display:block; width:clamp(220px,32vw,340px); height:auto; }
+.flickrz-wordmark img{
+  display:block; width:clamp(220px,32vw,340px); height:auto;
+  animation:flickrzFloat 3.6s ease-in-out infinite;
+}
+@keyframes flickrzFloat{
+  0%, 100%{ transform:translateY(0) rotate(-1deg); }
+  50%{ transform:translateY(-7px) rotate(1deg); }
+}
 .case-tagline{ margin-top:18px; font-size:18px; color:#c7cbd8; max-width:62ch; }
 .case-tagline strong{ color:var(--ink); font-weight:600; }
 

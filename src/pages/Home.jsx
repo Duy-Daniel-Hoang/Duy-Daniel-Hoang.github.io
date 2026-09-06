@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer.jsx";
 import SkillBars from "../components/SkillBars.jsx";
-import DetectionDiagramSmall from "../components/DetectionDiagramSmall.jsx";
 import Seo from "../components/Seo.jsx";
 
 const CORE_SKILLS = [
@@ -50,13 +49,14 @@ export default function Home() {
                 Hoang Tan Duy
                 <em>Daniel — 7+ years, Computer Vision · Generative AI · LLM Agents</em>
               </h1>
-              <p className="hero-thesis">
-                I build AI systems that have to survive contact with production: a{" "}
-                <strong>multi-agent generation pipeline</strong> serving a webtoon platform with 60M+ readers, and a{" "}
-                <strong>detection model</strong> a client will only sign off on at a near-zero miss rate.
-              </p>
+              <ul className="hero-thesis">
+                <li><strong className="hl hl-orange">Good command of English</strong></li>
+                <li><strong className="hl hl-green">Real-world AI product building experience</strong>, not just POCs or side projects</li>
+                <li><strong className="hl hl-blue">In-depth understanding of production</strong>: evaluation, monitoring, scaling, deployment...</li>
+                <li><strong className="hl hl-pink">Capability to drive the solution</strong> rather than just implementing tasks</li>
+              </ul>
               <div className="hero-meta">
-                HANOI, VIETNAM &nbsp;·&nbsp; AI TEAM LEADER @ SOTATEK &nbsp;·&nbsp; OPEN TO NEW ROLES
+                HANOI, VIETNAM &nbsp;·&nbsp; AI TEAM LEADER &nbsp;·&nbsp; OPEN TO NEW ROLES
               </div>
               <div className="hero-cta">
                 <a className="btn primary" href="https://www.linkedin.com/in/duydaniel" target="_blank" rel="noopener noreferrer">
@@ -68,10 +68,13 @@ export default function Home() {
             </div>
 
             <div className="rise-delay">
-              <div className="diagram-card">
-                <DetectionDiagramSmall />
-              </div>
-              <div className="diagram-caption">detection overlay, style of the Makinarocks pipeline</div>
+              <img
+                className="hero-image"
+                src="/assets/thumbnail-home.jpg"
+                alt="Multimodal AI agent — data, training, deployment, LLMOps, application"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </div>

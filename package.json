@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "cp dist/index.html dist/404.html && node scripts/prerender.mjs",
+    "postbuild": "cp dist/index.html dist/404.html && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs && rm -rf dist-ssr",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -17,7 +17,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
-    "puppeteer": "^24.43.1",
     "vite": "^5.4.6"
   }
 }

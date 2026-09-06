@@ -8,7 +8,7 @@ export default function EqualizerWave() {
           src="/assets/flickrz/thumbnail.webp"
           alt="Flickrz app screens — AI-powered webtoon production"
           decoding="async"
-          fetchPriority="high"
+          fetchpriority="high"
         />
       </div>
       <div className="eq-wave" aria-hidden="true">

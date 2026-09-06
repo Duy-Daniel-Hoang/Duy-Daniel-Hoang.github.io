@@ -113,12 +113,6 @@ export default function TryNectar() {
                 <div className="impact-text">The product is live today and profitable.</div>
               </div>
             </div>
-
-            <div className="todo-note">
-              <b>To fill in</b>
-              Add the real latency numbers (before/after), product screenshots, and any specific persona-injection or
-              context-management techniques you want to name.
-            </div>
           </div>
         </section>
       </main>

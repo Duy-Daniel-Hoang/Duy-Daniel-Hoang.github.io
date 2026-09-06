@@ -335,11 +335,6 @@ footer{ padding:34px 0 50px; }
 .impact-mark{ color:var(--accent); font-family:'Space Mono', monospace; font-size:14px; margin-top:2px; }
 .impact-text{ font-size:15.5px; color:#c7cbd8; }
 
-.todo-note{
-  margin-top:24px; border:1px dashed var(--border); border-radius:6px; padding:16px 18px;
-  font-size:13.5px; color:var(--ink-dim); background:var(--surface);
-}
-.todo-note b{ color:var(--accent); font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; display:block; margin-bottom:6px; }
 
 .case-nav-foot{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding:48px 0; }
 .case-nav-foot a{ text-decoration:none; }

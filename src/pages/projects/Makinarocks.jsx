@@ -163,12 +163,6 @@ export default function Makinarocks() {
                 <div className="impact-text">Closer to classic computer-vision research than most of my generative-AI work: domain gap, data allocation under real constraints, and picking the metric that matched the actual business risk.</div>
               </div>
             </div>
-
-            <div className="todo-note">
-              <b>To fill in</b>
-              Add the real mAP / false-negative numbers, the specific post-processing technique names, and any
-              drawing samples you&apos;re allowed to share.
-            </div>
           </div>
         </section>
       </main>

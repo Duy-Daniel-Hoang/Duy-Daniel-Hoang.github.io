@@ -327,7 +327,7 @@ export default function Home() {
                   Vietnamese — <b>Native</b>
                 </div>
                 <div className="ed-line">
-                  English — <b>Fluent</b>
+                  English — <b>Fluent (C1)</b>
                 </div>
               </div>
             </div>
@@ -360,10 +360,6 @@ export default function Home() {
                 <div className="contact-value">
                   <a href="mailto:hoangtanduynx@gmail.com">hoangtanduynx@gmail.com</a>
                 </div>
-              </div>
-              <div className="contact-item">
-                <div className="contact-label">Phone</div>
-                <div className="contact-value placeholder">add your phone here (optional)</div>
               </div>
             </div>
           </div>

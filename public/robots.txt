@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /mockups/
 Allow: /
 
-Sitemap: https://duyhoang09.github.io/sitemap.xml
+Sitemap: https://duy-daniel-hoang.github.io/sitemap.xml

@@ -24,7 +24,7 @@ export default function Home() {
     <>
       <Seo
         title="Hoang Tan Duy — AI / Computer Vision Engineer"
-        description="AI / Computer Vision engineer portfolio — multi-agent AI pipelines, LoRA fine-tuning, and production ML systems. Projects, experience, and skills."
+        description="AI / Computer Vision engineer portfolio — multi-agent AI pipelines, LoRA fine-tuning, and production systems. Projects, experience, and skills."
       />
       <nav>
         <div className="wrap-wide">

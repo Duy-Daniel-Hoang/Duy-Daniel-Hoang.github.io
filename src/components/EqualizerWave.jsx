@@ -5,7 +5,7 @@ export default function EqualizerWave() {
     <div className="wrap-wide">
       <div className="eq-thumb">
         <img
-          src="/assets/flickrz/thumbnail.png"
+          src="/assets/flickrz/thumbnail.webp"
           alt="Flickrz app screens — AI-powered webtoon production"
           decoding="async"
           fetchPriority="high"

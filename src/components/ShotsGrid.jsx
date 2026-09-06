@@ -1,9 +1,20 @@
+import { useState } from "react";
+
 export default function ShotsGrid({ shots }) {
+  const [activeIdx, setActiveIdx] = useState(null);
+  const clear = () => setActiveIdx(null);
+
   return (
     <div className="shots-grid">
-      {shots.map((s) => (
+      {shots.map((s, i) => (
         <div className="shot-card" key={s.file}>
-          <div className="shot-frame" data-hint={`drop ${s.file} here`}>
+          <div
+            className={"shot-frame" + (activeIdx === i ? " is-active" : "")}
+            data-hint={`drop ${s.file} here`}
+            onTouchStart={() => setActiveIdx(i)}
+            onTouchEnd={clear}
+            onTouchCancel={clear}
+          >
             <span className="shot-frame-glow" aria-hidden="true" />
             <img
               src={`/assets/flickrz/${s.file}`}

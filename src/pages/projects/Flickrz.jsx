@@ -83,16 +83,16 @@ const STEPS = [
 ];
 
 const SHOTS = [
-  { file: "pipeline.png", alt: "Pipeline run view", name: "Pipeline", desc: "Live run view — script and character lanes, two merge points, two fail-loops back to the writer." },
-  { file: "userbrief.png", alt: "User brief form", name: "User Brief", desc: "Where a chapter starts — genre, beats, characters." },
-  { file: "script-writer.png", alt: "Script Writer Agent screen", name: "Script Writer Agent", desc: "One agent, four outputs: story, dialogue, a character sketch prompt, a scene prompt." },
-  { file: "script-reviewer.png", alt: "Script Reviewer Agent screen", name: "Script Reviewer Agent", desc: "Rubric score on story + dialogue + scene prompts; fails loop back to the writer." },
-  { file: "lora-creation.png", alt: "Character LoRA Creation screen", name: "LoRA Creation (6.1)", desc: "Generates character sketches from the sketch prompt and trains the LoRA." },
-  { file: "image-reviewer.png", alt: "Image Reviewer Agent screen", name: "Image Reviewer Agent", desc: "Automated pass/flag on the generated sketches before a human sees them." },
-  { file: "human-review.png", alt: "Human Reviewer Team screen", name: "Human Reviewer Team", desc: "The hard gate — script and character sketches approved together, or both sent back." },
-  { file: "scene-generation.png", alt: "Scene generation screen", name: "Scene Generation (6.2)", desc: "Renders panels from the trained LoRA, scene prompts, and dialogue." },
-  { file: "quality-supervisor.png", alt: "Quality Supervisor Agent screen", name: "Quality Supervisor Agent", desc: "Pass/flag per panel, drift caught before output." },
-  { file: "chapter-output.png", alt: "Chapter output screen", name: "Output", desc: "Finished chapter, ready to publish or export." },
+  { file: "pipeline.webp", alt: "Pipeline run view", name: "Pipeline", desc: "Live run view — script and character lanes, two merge points, two fail-loops back to the writer." },
+  { file: "userbrief.webp", alt: "User brief form", name: "User Brief", desc: "Where a chapter starts — genre, beats, characters." },
+  { file: "script-writer.webp", alt: "Script Writer Agent screen", name: "Script Writer Agent", desc: "One agent, four outputs: story, dialogue, a character sketch prompt, a scene prompt." },
+  { file: "script-reviewer.webp", alt: "Script Reviewer Agent screen", name: "Script Reviewer Agent", desc: "Rubric score on story + dialogue + scene prompts; fails loop back to the writer." },
+  { file: "lora-creation.webp", alt: "Character LoRA Creation screen", name: "LoRA Creation (6.1)", desc: "Generates character sketches from the sketch prompt and trains the LoRA." },
+  { file: "image-reviewer.webp", alt: "Image Reviewer Agent screen", name: "Image Reviewer Agent", desc: "Automated pass/flag on the generated sketches before a human sees them." },
+  { file: "human-review.webp", alt: "Human Reviewer Team screen", name: "Human Reviewer Team", desc: "The hard gate — script and character sketches approved together, or both sent back." },
+  { file: "scene-generation.webp", alt: "Scene generation screen", name: "Scene Generation (6.2)", desc: "Renders panels from the trained LoRA, scene prompts, and dialogue." },
+  { file: "quality-supervisor.webp", alt: "Quality Supervisor Agent screen", name: "Quality Supervisor Agent", desc: "Pass/flag per panel, drift caught before output." },
+  { file: "chapter-output.webp", alt: "Chapter output screen", name: "Output", desc: "Finished chapter, ready to publish or export." },
 ];
 
 export default function Flickrz() {
@@ -206,7 +206,7 @@ export default function Flickrz() {
               <div className="demo-video-frame demo-video-frame--full">
                 <video
                   src="/assets/flickrz/vid3.mp4"
-                  poster="/assets/flickrz/vid3-poster.jpg"
+                  poster="/assets/flickrz/vid3-poster.webp"
                   controls
                   playsInline
                   preload="metadata"
@@ -223,7 +223,7 @@ export default function Flickrz() {
                 <div className="demo-video-frame">
                   <video
                     src="/assets/flickrz/vid1.mp4"
-                    poster="/assets/flickrz/vid1-poster.jpg"
+                    poster="/assets/flickrz/vid1-poster.webp"
                     controls
                     playsInline
                     preload="metadata"
@@ -232,7 +232,7 @@ export default function Flickrz() {
                 <div className="demo-video-frame">
                   <video
                     src="/assets/flickrz/vid2.mp4"
-                    poster="/assets/flickrz/vid2-poster.jpg"
+                    poster="/assets/flickrz/vid2-poster.webp"
                     controls
                     playsInline
                     preload="metadata"

@@ -3,12 +3,12 @@ import { useEffect, useRef } from "react";
 // Hotspots over /assets/thumbnail-home.jpg (1280x853), one per pipeline stage.
 // Coordinates measured directly against the source image.
 const HOTSPOTS = [
-  { label: "Data", x: 130, y: 90, w: 230, h: 200 },
-  { label: "Preprocessing", x: 355, y: 90, w: 210, h: 195 },
-  { label: "Training", x: 565, y: 88, w: 175, h: 195 },
-  { label: "Deployment", x: 700, y: 95, w: 175, h: 190 },
-  { label: "LLMOps", x: 875, y: 90, w: 185, h: 195 },
-  { label: "Application", x: 1050, y: 90, w: 155, h: 210 },
+  { label: "Data", x: 133, y: 114, w: 219, h: 177 },
+  { label: "Preprocessing", x: 378, y: 111, w: 151, h: 187 },
+  { label: "Training", x: 549, y: 105, w: 144, h: 191 },
+  { label: "Deployment", x: 713, y: 109, w: 132, h: 192 },
+  { label: "LLMOps", x: 866, y: 101, w: 161, h: 232 },
+  { label: "Application", x: 1044, y: 113, w: 130, h: 217 },
 ];
 const IMG_W = 1280;
 const IMG_H = 853;

@@ -30,6 +30,7 @@ const HumanReview = mockup("pages/HumanReview.jsx");
 const SceneGeneration = mockup("pages/SceneGeneration.jsx");
 const QualitySupervisor = mockup("pages/QualitySupervisor.jsx");
 const ChapterOutput = mockup("pages/ChapterOutput.jsx");
+const MakinarocksDetect = mockup("pages/MakinarocksDetect.jsx");
 
 export default function App() {
   return (
@@ -43,19 +44,22 @@ export default function App() {
         </Route>
 
         {import.meta.env.DEV && (
-          <Route path="/mockups" element={<AdminLayout />}>
-            <Route index element={<Navigate to="pipeline" replace />} />
-            <Route path="pipeline" element={<Pipeline />} />
-            <Route path="chapter-brief" element={<ChapterBrief />} />
-            <Route path="script-writer" element={<ScriptWriter />} />
-            <Route path="script-reviewer" element={<ScriptReviewer />} />
-            <Route path="lora-creation" element={<LoraCreation />} />
-            <Route path="image-reviewer" element={<ImageReviewer />} />
-            <Route path="human-review" element={<HumanReview />} />
-            <Route path="scene-generation" element={<SceneGeneration />} />
-            <Route path="quality-supervisor" element={<QualitySupervisor />} />
-            <Route path="chapter-output" element={<ChapterOutput />} />
-          </Route>
+          <>
+            <Route path="/mockups" element={<AdminLayout />}>
+              <Route index element={<Navigate to="pipeline" replace />} />
+              <Route path="pipeline" element={<Pipeline />} />
+              <Route path="chapter-brief" element={<ChapterBrief />} />
+              <Route path="script-writer" element={<ScriptWriter />} />
+              <Route path="script-reviewer" element={<ScriptReviewer />} />
+              <Route path="lora-creation" element={<LoraCreation />} />
+              <Route path="image-reviewer" element={<ImageReviewer />} />
+              <Route path="human-review" element={<HumanReview />} />
+              <Route path="scene-generation" element={<SceneGeneration />} />
+              <Route path="quality-supervisor" element={<QualitySupervisor />} />
+              <Route path="chapter-output" element={<ChapterOutput />} />
+            </Route>
+            <Route path="/mockups/makinarocks-detect" element={<MakinarocksDetect />} />
+          </>
         )}
 
         <Route path="*" element={<Navigate to="/" replace />} />

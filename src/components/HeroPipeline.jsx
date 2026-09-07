@@ -13,8 +13,6 @@ const HOTSPOTS = [
 const IMG_W = 1280;
 const IMG_H = 853;
 const LOOP_MS = 16000;
-const MAX_BOOST = 0.1;
-const SIGMA = 12;
 
 const centers = HOTSPOTS.map((b) => ((b.x + b.w / 2) / IMG_W) * 100);
 
@@ -27,19 +25,31 @@ export default function HeroPipeline() {
     if (reduceMotion) return;
 
     let raf;
+    let activeIdx = -1;
     const tick = (t) => {
       const progress = (t % LOOP_MS) / LOOP_MS; // 0..1
       const scannerPos = progress * 100; // 0..100% across image width
-
       if (scannerRef.current) scannerRef.current.style.left = `${scannerPos}%`;
 
-      boxRefs.current.forEach((el, i) => {
-        if (!el) return;
-        const d = scannerPos - centers[i];
-        const intensity = Math.exp(-(d * d) / (2 * SIGMA * SIGMA));
-        el.style.opacity = intensity.toFixed(3);
-        el.style.transform = `scale(${1 + MAX_BOOST * intensity})`;
+      // Only one box is ever "active" at a time — a plain discrete switch,
+      // not a continuously-recomputed scale, keeps the text inside crisp
+      // instead of smearing across many in-between sizes.
+      let nearest = 0;
+      let minDist = Infinity;
+      centers.forEach((c, i) => {
+        const d = Math.abs(scannerPos - c);
+        if (d < minDist) {
+          minDist = d;
+          nearest = i;
+        }
       });
+
+      if (nearest !== activeIdx) {
+        boxRefs.current.forEach((el, i) => {
+          if (el) el.classList.toggle("is-active", i === nearest);
+        });
+        activeIdx = nearest;
+      }
 
       raf = requestAnimationFrame(tick);
     };

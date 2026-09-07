@@ -17,7 +17,7 @@ const STEP_MS = 1600;
 // Size step by rank distance from the active box (rank 1 = active itself,
 // rank 2 = one slot away, etc.) — a fixed, discrete scale per tier, no
 // continuous interpolation between them.
-const SCALE_BY_RANK = [1.16, 1.09, 1.04, 1.0, 1.0, 1.0];
+const SCALE_BY_RANK = [1.32, 1.12, 1.03, 1.0, 1.0, 1.0];
 
 export default function HeroPipeline() {
   const boxRefs = useRef([]);

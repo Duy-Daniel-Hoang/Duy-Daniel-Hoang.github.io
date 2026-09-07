@@ -110,6 +110,7 @@ export default function Home() {
                     }}
                   />
                 ))}
+                <span className="hero-scanner" aria-hidden="true" />
               </div>
             </div>
           </div>

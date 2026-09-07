@@ -134,27 +134,12 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
   position:absolute; background-repeat:no-repeat; border-radius:10px;
   box-shadow:0 0 0 3px var(--accent), 0 16px 34px -8px #000000c0;
   opacity:0; transform:scale(1); pointer-events:none;
-  animation:heroHotspotPulse 9s ease-in-out infinite;
-}
-@keyframes heroHotspotPulse{
-  0%{ opacity:0; transform:scale(1); }
-  6%{ opacity:1; transform:scale(1.16); }
-  13%{ opacity:1; transform:scale(1.16); }
-  22%, 100%{ opacity:0; transform:scale(1); }
+  will-change:transform, opacity;
 }
 .hero-scanner{
-  position:absolute; top:9%; height:26%; width:9%;
+  position:absolute; top:9%; left:0; height:26%; width:9%;
   background:linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 65%, transparent) 45%, color-mix(in srgb, var(--accent) 65%, transparent) 55%, transparent);
-  filter:blur(7px); pointer-events:none;
-  animation:heroScannerSweep 9s linear infinite;
-}
-@keyframes heroScannerSweep{
-  0%{ left:8%; }
-  100%{ left:83%; }
-}
-@media (prefers-reduced-motion: reduce){
-  .hero-hotspot{ animation:none; opacity:0; }
-  .hero-scanner{ animation:none; opacity:0; }
+  filter:blur(7px); pointer-events:none; will-change:left;
 }
 
 /* ---------- corner-bracket cards ---------- */

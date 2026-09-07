@@ -137,7 +137,7 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
 }
 .hero-hotspot.is-active{
   z-index:1;
-  box-shadow:0 0 0 3px var(--accent), 0 16px 34px -8px #000000c0;
+  box-shadow:0 16px 34px -8px #000000c0;
 }
 .hero-scanner{
   position:absolute; top:9%; left:0; height:26%; width:9%;

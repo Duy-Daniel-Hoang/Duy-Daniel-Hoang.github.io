@@ -18,9 +18,6 @@ const STEP_MS = 1600;
 // rank 2 = one slot away, etc.) — a fixed, discrete scale per tier, no
 // continuous interpolation between them.
 const SCALE_BY_RANK = [1.16, 1.09, 1.04, 1.0, 1.0, 1.0];
-// Brightness follows the same rank tiers: active box brightest, farther
-// boxes dimmer in fixed steps, snapped instantly with the scale.
-const BRIGHTNESS_BY_RANK = [1.25, 1.1, 0.95, 0.8, 0.8, 0.8];
 
 export default function HeroPipeline() {
   const boxRefs = useRef([]);
@@ -36,7 +33,6 @@ export default function HeroPipeline() {
         if (!el) return;
         const rank = Math.abs(activeIdx - i); // 0 = active box itself
         el.style.transform = `scale(${SCALE_BY_RANK[rank]})`;
-        el.style.filter = `brightness(${BRIGHTNESS_BY_RANK[rank]})`;
         el.classList.toggle("is-active", i === activeIdx);
       });
     };

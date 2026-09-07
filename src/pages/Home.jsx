@@ -18,6 +18,21 @@ const TOOLS_SKILLS = [
   ["LangChain / LangGraph", 2],
 ];
 
+// Hotspots over /assets/thumbnail-home.jpg (1280x853), one per pipeline stage —
+// each pulses into a zoomed-in close-up in sequence to add motion to the
+// still image. Box coordinates measured directly against the source image.
+const HERO_HOTSPOTS = [
+  { label: "Data", x: 130, y: 90, w: 230, h: 200 },
+  { label: "Preprocessing", x: 355, y: 90, w: 210, h: 195 },
+  { label: "Training", x: 565, y: 88, w: 175, h: 195 },
+  { label: "Deployment", x: 700, y: 95, w: 175, h: 190 },
+  { label: "LLMOps", x: 875, y: 90, w: 185, h: 195 },
+  { label: "Application", x: 1050, y: 90, w: 155, h: 210 },
+];
+const HERO_IMAGE_W = 1280;
+const HERO_IMAGE_H = 853;
+const HERO_SLOT_S = 1.5;
+
 export default function Home() {
   return (
     <>
@@ -68,13 +83,34 @@ export default function Home() {
             </div>
 
             <div className="rise-delay">
-              <img
-                className="hero-image"
-                src="/assets/thumbnail-home.jpg"
-                alt="Multimodal AI agent — data, training, deployment, LLMOps, application"
-                loading="lazy"
-                decoding="async"
-              />
+              <div className="hero-image-wrap">
+                <img
+                  className="hero-image"
+                  src="/assets/thumbnail-home.jpg"
+                  alt="Multimodal AI agent — data, training, deployment, LLMOps, application"
+                  loading="lazy"
+                  decoding="async"
+                />
+                {HERO_HOTSPOTS.map((box, i) => (
+                  <span
+                    key={box.label}
+                    className="hero-hotspot"
+                    aria-hidden="true"
+                    style={{
+                      left: `${(box.x / HERO_IMAGE_W) * 100}%`,
+                      top: `${(box.y / HERO_IMAGE_H) * 100}%`,
+                      width: `${(box.w / HERO_IMAGE_W) * 100}%`,
+                      height: `${(box.h / HERO_IMAGE_H) * 100}%`,
+                      backgroundImage: "url(/assets/thumbnail-home.jpg)",
+                      backgroundSize: `${(HERO_IMAGE_W / box.w) * 100}% ${(HERO_IMAGE_H / box.h) * 100}%`,
+                      backgroundPosition: `${(box.x / (HERO_IMAGE_W - box.w)) * 100}% ${
+                        (box.y / (HERO_IMAGE_H - box.h)) * 100
+                      }%`,
+                      animationDelay: `${i * HERO_SLOT_S}s`,
+                    }}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -139,12 +139,6 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
   z-index:1;
   box-shadow:0 16px 34px -8px #000000c0;
 }
-.hero-scanner{
-  position:absolute; top:9%; left:0; height:26%; width:9%;
-  background:linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 65%, transparent) 45%, color-mix(in srgb, var(--accent) 65%, transparent) 55%, transparent);
-  filter:blur(7px); pointer-events:none; will-change:left;
-}
-
 /* ---------- corner-bracket cards ---------- */
 .bracket{ position:relative; padding:26px; }
 .bracket::before, .bracket::after, .bracket .bk-tr, .bracket .bk-bl{

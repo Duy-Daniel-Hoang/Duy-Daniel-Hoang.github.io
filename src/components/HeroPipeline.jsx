@@ -19,10 +19,7 @@ const STEP_MS = 1600;
 // continuous interpolation between them.
 const SCALE_BY_RANK = [1.16, 1.09, 1.04, 1.0, 1.0, 1.0];
 
-const centers = HOTSPOTS.map((b) => ((b.x + b.w / 2) / IMG_W) * 100);
-
 export default function HeroPipeline() {
-  const scannerRef = useRef(null);
   const boxRefs = useRef([]);
 
   useEffect(() => {
@@ -32,7 +29,6 @@ export default function HeroPipeline() {
     let activeIdx = 0;
 
     const applyStep = () => {
-      if (scannerRef.current) scannerRef.current.style.left = `${centers[activeIdx]}%`;
       boxRefs.current.forEach((el, i) => {
         if (!el) return;
         const rank = Math.abs(activeIdx - i); // 0 = active box itself
@@ -75,7 +71,6 @@ export default function HeroPipeline() {
           }}
         />
       ))}
-      <span ref={scannerRef} className="hero-scanner" aria-hidden="true" />
     </div>
   );
 }

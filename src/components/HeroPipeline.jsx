@@ -12,9 +12,9 @@ const HOTSPOTS = [
 ];
 const IMG_W = 1280;
 const IMG_H = 853;
-const LOOP_MS = 8000;
-const MAX_BOOST = 0.16;
-const SIGMA = 9;
+const LOOP_MS = 16000;
+const MAX_BOOST = 0.1;
+const SIGMA = 12;
 
 const centers = HOTSPOTS.map((b) => ((b.x + b.w / 2) / IMG_W) * 100);
 

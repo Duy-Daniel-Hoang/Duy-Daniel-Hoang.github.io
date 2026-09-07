@@ -134,10 +134,9 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
   position:absolute; background-repeat:no-repeat; border-radius:10px;
   opacity:1; transform:scale(1); pointer-events:none;
   box-shadow:0 0 0 0 transparent;
-  transition:transform .5s ease, box-shadow .5s ease;
 }
 .hero-hotspot.is-active{
-  transform:scale(1.08); z-index:1;
+  z-index:1;
   box-shadow:0 0 0 3px var(--accent), 0 16px 34px -8px #000000c0;
 }
 .hero-scanner{

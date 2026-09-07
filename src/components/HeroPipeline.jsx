@@ -12,7 +12,7 @@ const HOTSPOTS = [
 ];
 const IMG_W = 1280;
 const IMG_H = 853;
-const STEP_MS = 1600;
+const STEP_MS = 1100;
 
 // Size step by rank distance from the active box (rank 1 = active itself,
 // rank 2 = one slot away, etc.) — a fixed, discrete scale per tier, no

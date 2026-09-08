@@ -39,7 +39,9 @@ export default function DrawMind() {
       <header className="case-hero">
         <div className="wrap">
           <div className="case-kicker">CASE STUDY · 02 / 03</div>
-          <h1 className="case-title">DrawMind</h1>
+          <h1 className="case-title">
+            <img className="case-logo" src="/assets/drawmind/drawmind-logo.png" alt="DrawMind" />
+          </h1>
           <p className="case-tagline">
             Teaching a detection model to read <strong>technical engineering drawings</strong> — and hitting a client
             acceptance bar that treated a missed detection as far more costly than a false alarm.
@@ -65,6 +67,16 @@ export default function DrawMind() {
           </div>
         </div>
       </header>
+
+      <div className="wrap" style={{ marginTop: 40 }}>
+        <div className="hero-image-wrap">
+          <img
+            className="hero-image"
+            src="/assets/drawmind/drawmind-thumbnail.png"
+            alt="DrawMind reading and classifying View, Note, and Table regions on a technical engineering drawing"
+          />
+        </div>
+      </div>
 
       <main>
         <section className="case-section">

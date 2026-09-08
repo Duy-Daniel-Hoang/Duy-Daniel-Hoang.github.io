@@ -10,7 +10,7 @@ import Home from "./pages/Home.jsx";
 // Suspense state), forcing React to discard and re-render from scratch,
 // which showed up as a visible flash on first load.
 import Flickrz from "./pages/projects/Flickrz.jsx";
-import Makinarocks from "./pages/projects/Makinarocks.jsx";
+import DrawMind from "./pages/projects/DrawMind.jsx";
 import TryNectar from "./pages/projects/TryNectar.jsx";
 
 // The internal AI Webtoon admin mockup (/mockups/*) and its screenshots are
@@ -30,8 +30,8 @@ const HumanReview = mockup("pages/HumanReview.jsx");
 const SceneGeneration = mockup("pages/SceneGeneration.jsx");
 const QualitySupervisor = mockup("pages/QualitySupervisor.jsx");
 const ChapterOutput = mockup("pages/ChapterOutput.jsx");
-const MakinarocksDetect = mockup("pages/MakinarocksDetect.jsx");
-const MakinarocksChat = mockup("pages/MakinarocksChat.jsx");
+const DrawMindDetect = mockup("pages/DrawMindDetect.jsx");
+const DrawMindChat = mockup("pages/DrawMindChat.jsx");
 
 export default function App() {
   return (
@@ -40,7 +40,7 @@ export default function App() {
         <Route element={<PortfolioLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/projects/flickrz" element={<Flickrz />} />
-          <Route path="/projects/makinarocks" element={<Makinarocks />} />
+          <Route path="/projects/drawmind" element={<DrawMind />} />
           <Route path="/projects/trynectar" element={<TryNectar />} />
         </Route>
 
@@ -59,10 +59,10 @@ export default function App() {
               <Route path="quality-supervisor" element={<QualitySupervisor />} />
               <Route path="chapter-output" element={<ChapterOutput />} />
             </Route>
-            <Route path="/mockups/makinarocks-detect" element={<MakinarocksDetect />} />
-            <Route path="/mockups/makinarocks-chat" element={<MakinarocksChat />} />
-            <Route path="/mockups/makinarocks-detect-ig" element={<MakinarocksDetect variant="ig" />} />
-            <Route path="/mockups/makinarocks-chat-ig" element={<MakinarocksChat variant="ig" />} />
+            <Route path="/mockups/drawmind-detect" element={<DrawMindDetect />} />
+            <Route path="/mockups/drawmind-chat" element={<DrawMindChat />} />
+            <Route path="/mockups/drawmind-detect-ig" element={<DrawMindDetect variant="ig" />} />
+            <Route path="/mockups/drawmind-chat-ig" element={<DrawMindChat variant="ig" />} />
           </>
         )}
 

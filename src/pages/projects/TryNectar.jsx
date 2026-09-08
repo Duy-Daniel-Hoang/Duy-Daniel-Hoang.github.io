@@ -117,7 +117,7 @@ export default function TryNectar() {
         </section>
       </main>
 
-      <CaseFoot others={[{ label: "Flickrz", to: "/projects/flickrz" }, { label: "Makinarocks", to: "/projects/makinarocks" }]} />
+      <CaseFoot others={[{ label: "Flickrz", to: "/projects/flickrz" }, { label: "DrawMind", to: "/projects/drawmind" }]} />
     </>
   );
 }

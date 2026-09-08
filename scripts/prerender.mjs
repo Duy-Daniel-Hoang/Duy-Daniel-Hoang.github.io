@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { render } from "../dist-ssr/entry-server.js";
 
-const ROUTES = ["/", "/projects/flickrz", "/projects/makinarocks", "/projects/trynectar"];
+const ROUTES = ["/", "/projects/flickrz", "/projects/drawmind", "/projects/trynectar"];
 
 const template = fs.readFileSync("dist/index.html", "utf8");
 

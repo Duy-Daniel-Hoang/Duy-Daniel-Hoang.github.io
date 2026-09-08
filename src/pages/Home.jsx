@@ -127,7 +127,7 @@ export default function Home() {
                   </div>
                   <p className="tl-desc">
                     Leading AI sub-teams across generative and computer-vision client projects — from technical
-                    architecture and model strategy through to production deployment. Includes Flickrz, Makinarocks,
+                    architecture and model strategy through to production deployment. Includes Flickrz, DrawMind,
                     TryNectar, and Bloom.
                   </p>
                 </div>
@@ -157,7 +157,7 @@ export default function Home() {
               <h2>Featured projects</h2>
               <p>
                 Four production systems, reverse-chronological by how central they are to my current focus: agent
-                orchestration and computer vision under real constraints. Flickrz, Makinarocks, and TryNectar open
+                orchestration and computer vision under real constraints. Flickrz, DrawMind, and TryNectar open
                 into a full case study.
               </p>
             </div>
@@ -191,12 +191,12 @@ export default function Home() {
                 </article>
               </Link>
 
-              <Link className="proj-card-link" to="/projects/makinarocks">
+              <Link className="proj-card-link" to="/projects/drawmind">
                 <article className="proj-card bracket proj-card--green">
                   <div className="bk-tr" />
                   <div className="bk-bl" />
                   <div className="proj-top">
-                    <div className="proj-title">Makinarocks</div>
+                    <div className="proj-title">DrawMind</div>
                     <div className="proj-role">AI ENGINEER</div>
                   </div>
                   <p className="proj-desc">

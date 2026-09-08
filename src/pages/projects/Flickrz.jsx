@@ -282,7 +282,7 @@ export default function Flickrz() {
         </section>
       </main>
 
-      <CaseFoot others={[{ label: "Makinarocks", to: "/projects/makinarocks" }, { label: "TryNectar", to: "/projects/trynectar" }]} />
+      <CaseFoot others={[{ label: "DrawMind", to: "/projects/drawmind" }, { label: "TryNectar", to: "/projects/trynectar" }]} />
     </>
   );
 }

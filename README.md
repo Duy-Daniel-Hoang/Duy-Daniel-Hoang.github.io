@@ -35,7 +35,7 @@ public/assets/screens/   drop real screenshots here (see the "To fill in" note o
 ## Routes
 
 - `/` — portfolio home
-- `/projects/flickrz`, `/projects/makinarocks`, `/projects/trynectar` — case studies
+- `/projects/flickrz`, `/projects/drawmind`, `/projects/trynectar` — case studies
 - `/mockups/pipeline`, `/mockups/chapter-brief`, `/mockups/script-writer`, `/mockups/script-reviewer`,
   `/mockups/lora-creation`, `/mockups/image-reviewer`, `/mockups/human-review`, `/mockups/scene-generation`,
   `/mockups/quality-supervisor`, `/mockups/chapter-output` — the internal admin mockup, for screenshotting

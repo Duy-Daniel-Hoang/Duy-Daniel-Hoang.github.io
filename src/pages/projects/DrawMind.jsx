@@ -27,19 +27,19 @@ const STEPS = [
   },
 ];
 
-export default function Makinarocks() {
+export default function DrawMind() {
   return (
     <>
       <Seo
-        title="Makinarocks — Detection Model for Engineering Drawings | Hoang Tan Duy"
+        title="DrawMind — Detection Model for Engineering Drawings | Hoang Tan Duy"
         description="Teaching a detection model to read technical engineering drawings — hitting a client acceptance bar that treated a missed detection as far more costly than a false alarm."
       />
-      <CaseNav label="MAKINAROCKS" />
+      <CaseNav label="DRAWMIND" />
 
       <header className="case-hero">
         <div className="wrap">
           <div className="case-kicker">CASE STUDY · 02 / 03</div>
-          <h1 className="case-title">Makinarocks</h1>
+          <h1 className="case-title">DrawMind</h1>
           <p className="case-tagline">
             Teaching a detection model to read <strong>technical engineering drawings</strong> — and hitting a client
             acceptance bar that treated a missed detection as far more costly than a false alarm.
@@ -164,7 +164,7 @@ export default function Makinarocks() {
             <div className="case-video-frame">
               <video
                 className="case-video"
-                src="/assets/makinarocks/det-seg-vid.mp4"
+                src="/assets/drawmind/det-seg-vid.mp4"
                 autoPlay
                 loop
                 muted
@@ -177,7 +177,7 @@ export default function Makinarocks() {
             <div className="case-video-frame" style={{ marginTop: 40 }}>
               <video
                 className="case-video"
-                src="/assets/makinarocks/aigent-understands-drawings.mp4"
+                src="/assets/drawmind/aigent-understands-drawings.mp4"
                 autoPlay
                 loop
                 muted

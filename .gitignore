@@ -6,4 +6,6 @@ dist
 src/mockups/
 public/assets/flickrz/scene-cut*.webp
 public/assets/flickrz/jiho-sketch*.webp
-public/assets/makinarocks/
+# Only the disposable mockup source drawing stays out — the case-study demo
+# videos in this same folder are real production assets and must be tracked.
+public/assets/makinarocks/original-drawing*.jpg

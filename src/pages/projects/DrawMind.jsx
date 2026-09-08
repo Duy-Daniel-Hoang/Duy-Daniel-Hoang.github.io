@@ -1,8 +1,33 @@
+import { useEffect, useRef } from "react";
 import CaseNav from "../../components/CaseNav.jsx";
 import CaseFoot from "../../components/CaseFoot.jsx";
 import AgentFlow from "../../components/AgentFlow.jsx";
 import DetectionDiagramLarge from "../../components/DetectionDiagramLarge.jsx";
 import Seo from "../../components/Seo.jsx";
+
+// Both demo clips live well below the fold, in "System in action" — with a
+// plain autoplay attribute they'd both start fetching/decoding immediately
+// on page load anyway, fighting the initial page render for bandwidth and
+// CPU (that's what showed up as a short stutter on first load). Only start
+// each once it's actually scrolled into view, and pause it again once it
+// scrolls back out.
+function useAutoplayInView() {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return undefined;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) el.play().catch(() => {});
+        else el.pause();
+      },
+      { threshold: 0.35 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return ref;
+}
 
 const STEPS = [
   {
@@ -28,6 +53,9 @@ const STEPS = [
 ];
 
 export default function DrawMind() {
+  const detSegVideoRef = useAutoplayInView();
+  const agentVideoRef = useAutoplayInView();
+
   return (
     <>
       <Seo
@@ -175,9 +203,9 @@ export default function DrawMind() {
 
             <div className="case-video-frame">
               <video
+                ref={detSegVideoRef}
                 className="case-video"
                 src="/assets/drawmind/det-seg-vid.mp4"
-                autoPlay
                 loop
                 muted
                 playsInline
@@ -188,9 +216,9 @@ export default function DrawMind() {
 
             <div className="case-video-frame" style={{ marginTop: 40 }}>
               <video
+                ref={agentVideoRef}
                 className="case-video"
                 src="/assets/drawmind/aigent-understands-drawings.mp4"
-                autoPlay
                 loop
                 muted
                 playsInline

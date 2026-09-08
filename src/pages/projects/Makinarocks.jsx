@@ -152,7 +152,46 @@ export default function Makinarocks() {
 
         <section className="case-section">
           <div className="wrap">
-            <h2 className="case-h2"><span className="case-num">04</span>Result</h2>
+            <h2 className="case-h2"><span className="case-num">04</span>System in action</h2>
+            <div className="case-body">
+              <p>
+                Two capabilities built on top of the detection model, shown running end-to-end: automatic
+                detection and pixel-level segmentation of every View, Note, and Table region, and an AI
+                agent that reads a drawing closely enough to answer questions about it.
+              </p>
+            </div>
+
+            <div className="case-video-frame">
+              <video
+                className="case-video"
+                src="/assets/makinarocks/det-seg-vid.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+              />
+            </div>
+            <div className="diagram-caption">automatic detection &amp; segmentation, running live on a real drawing</div>
+
+            <div className="case-video-frame" style={{ marginTop: 40 }}>
+              <video
+                className="case-video"
+                src="/assets/makinarocks/aigent-understands-drawings.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+              />
+            </div>
+            <div className="diagram-caption">an AI agent reading a drawing closely enough to answer questions about it</div>
+          </div>
+        </section>
+
+        <section className="case-section">
+          <div className="wrap">
+            <h2 className="case-h2"><span className="case-num">05</span>Result</h2>
             <div className="impact-list">
               <div className="impact-item">
                 <div className="impact-mark">▸</div>

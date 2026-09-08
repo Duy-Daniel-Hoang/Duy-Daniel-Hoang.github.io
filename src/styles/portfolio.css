@@ -130,6 +130,26 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
   width:100%; display:block; border-radius:8px; border:1px solid var(--border);
   box-shadow:0 18px 40px -12px #000000a8;
 }
+
+/* ---------- case-study demo video ---------- */
+/* Thick watercolor-wash border, same technique as the mockup rigs' own
+   background (soft overlapping radial blooms) but in dark tones so it reads
+   as a frame, not another bright graphic competing with the video. */
+.case-video-frame{
+  padding:16px; border-radius:16px;
+  background:
+    radial-gradient(ellipse 55% 60% at 10% 15%, #7e22ce99 0%, transparent 60%),
+    radial-gradient(ellipse 50% 55% at 6% 75%, #0369a199 0%, transparent 60%),
+    radial-gradient(ellipse 55% 60% at 42% 32%, #78350f99 0%, transparent 62%),
+    radial-gradient(ellipse 55% 60% at 58% 68%, #1e3a8a99 0%, transparent 60%),
+    radial-gradient(ellipse 50% 55% at 90% 18%, #83184399 0%, transparent 58%),
+    radial-gradient(ellipse 55% 60% at 92% 68%, #164e6399 0%, transparent 60%),
+    #0a0a0f;
+  box-shadow:0 18px 40px -12px #000000a8;
+}
+.case-video{
+  width:100%; display:block; border-radius:8px; background:#0a0a0a;
+}
 .hero-hotspot{
   position:absolute; background-repeat:no-repeat; border-radius:10px;
   opacity:1; transform:scale(1); pointer-events:none;

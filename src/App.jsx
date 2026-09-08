@@ -31,6 +31,7 @@ const SceneGeneration = mockup("pages/SceneGeneration.jsx");
 const QualitySupervisor = mockup("pages/QualitySupervisor.jsx");
 const ChapterOutput = mockup("pages/ChapterOutput.jsx");
 const MakinarocksDetect = mockup("pages/MakinarocksDetect.jsx");
+const MakinarocksChat = mockup("pages/MakinarocksChat.jsx");
 
 export default function App() {
   return (
@@ -59,6 +60,9 @@ export default function App() {
               <Route path="chapter-output" element={<ChapterOutput />} />
             </Route>
             <Route path="/mockups/makinarocks-detect" element={<MakinarocksDetect />} />
+            <Route path="/mockups/makinarocks-chat" element={<MakinarocksChat />} />
+            <Route path="/mockups/makinarocks-detect-ig" element={<MakinarocksDetect variant="ig" />} />
+            <Route path="/mockups/makinarocks-chat-ig" element={<MakinarocksChat variant="ig" />} />
           </>
         )}
 

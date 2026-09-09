@@ -81,7 +81,7 @@ export default function DrawMind() {
             </div>
             <div className="meta-item">
               <div className="meta-label">Team</div>
-              <div className="meta-value">25 members</div>
+              <div className="meta-value">10 members</div>
             </div>
             <div className="meta-item">
               <div className="meta-label">Client</div>

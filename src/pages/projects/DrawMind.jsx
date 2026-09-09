@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import CaseNav from "../../components/CaseNav.jsx";
 import CaseFoot from "../../components/CaseFoot.jsx";
 import AgentFlow from "../../components/AgentFlow.jsx";
-import DetectionDiagramLarge from "../../components/DetectionDiagramLarge.jsx";
 import Seo from "../../components/Seo.jsx";
 
 // Both demo clips live well below the fold, in "System in action" — with a
@@ -33,7 +32,7 @@ const STEPS = [
   {
     idx: "①",
     name: "Error-cause analysis",
-    desc: "Grouped failures by root cause — genuinely ambiguous cases (needs more data), cases the model couldn't fit given VRAM limits, and cases exposing the pretrained backbone's weak domain fit.",
+    desc: "Grouped failures by root cause — genuinely ambiguous cases (needs more data), cases the model couldn't fit given VRAM limits, cases exposing the pretrained backbone's weak domain fit, and misclassifications that count against both classes at once (a Table read as a Note is a false negative for Table and a false positive for Note).",
   },
   {
     idx: "②",
@@ -43,12 +42,12 @@ const STEPS = [
   {
     idx: "③",
     name: "Targeted image processing",
-    desc: "Pre-processing tuned to make View/Note/Table boundaries easier for the model to separate, addressing the specific confusions the error analysis surfaced.",
+    desc: "Pre-processing tuned for the failure modes the error analysis surfaced — tiling and higher-resolution crops so small text and thin lines survive resizing, not just cues to separate View/Note/Table boundaries.",
   },
   {
     idx: "④",
     name: "Post-processing",
-    desc: "A custom post-processing stage that catches near-miss detections before final output — the main lever for pushing false negatives down without a data or compute budget to match.",
+    desc: "Per-class confidence thresholds tuned around the recall the client needed, plus a custom stage that catches near-miss detections — the main lever for pushing false negatives down without a data or compute budget to match.",
   },
 ];
 
@@ -83,6 +82,14 @@ export default function DrawMind() {
             <div className="meta-item">
               <div className="meta-label">Team</div>
               <div className="meta-value">25 members</div>
+            </div>
+            <div className="meta-item">
+              <div className="meta-label">Client</div>
+              <div className="meta-value">
+                <a href="https://www.makinarocks.ai/en/" target="_blank" rel="noopener noreferrer">
+                  Makinarocks ↗
+                </a>
+              </div>
             </div>
             <div className="meta-item">
               <div className="meta-label">Domain</div>
@@ -125,12 +132,12 @@ export default function DrawMind() {
               </p>
             </div>
 
-            <div className="diagram-card" style={{ marginTop: 28 }}>
-              <DetectionDiagramLarge />
-            </div>
-            <div className="diagram-caption">
-              the three target classes — visually closer to each other than to anything RT-DETR had seen in
-              pretraining
+            <div className="case-video-frame" style={{ marginTop: 28 }}>
+              <img
+                className="case-video"
+                src="/assets/drawmind/problem.png"
+                alt="A real technical engineering drawing — multiple views, a detail callout, section cuts, and a parts table"
+              />
             </div>
           </div>
         </section>
@@ -140,27 +147,48 @@ export default function DrawMind() {
             <h2 className="case-h2"><span className="case-num">02</span>Domain gap: a real-world model, meeting a line drawing</h2>
             <div className="case-body">
               <p>
-                RT-DETR-ResNet101 was pretrained on normal photos — people, cars, everyday objects. A technical
-                drawing looks nothing like that: mostly thin black lines, small text, and repeated symbols on a plain
-                white background. Just fine-tuning it a little on drawing data wasn&apos;t enough — it kept trying to
-                apply what it learned from real-world photos, which doesn&apos;t fit line drawings well.
+                RT-DETR-ResNet101 was pretrained on normal photos — people, cars, everyday objects. Its low-level
+                features and initialization were still useful, but the higher-level representations didn&apos;t
+                transfer cleanly to a technical drawing&apos;s mostly thin black lines, small text, and repeated
+                symbols on a plain white background. Our initial fine-tuning baseline converged, but recall —
+                especially on small and visually ambiguous regions — stayed below the client&apos;s acceptance
+                threshold.
               </p>
               <p>
-                More training data would genuinely have helped here — but the client could only provide a limited
-                amount, and we had a limited GPU budget too, so scaling up to a much bigger model wasn&apos;t an
-                option either. That left three constraints at once: not enough data, limited VRAM/compute, and a
-                pretrained model that wasn&apos;t a great fit for the domain to begin with.
+                Part of that gap wasn&apos;t really about pretraining at all: these drawings are high-resolution, and
+                resizing a full sheet down to the model&apos;s input size can erase the very thing that makes a Note
+                a Note — small text shrinks to a handful of illegible pixels, thin lines vanish, and a large Table can
+                end up looking like a small Note block. Tiling and higher-resolution inference mattered here as much
+                as the domain gap itself.
+              </p>
+              <p>
+                More diverse, accurately labeled training data — especially hard examples and underrepresented
+                layouts — would likely have improved generalization further, but the client could only provide a
+                limited amount, and we had a limited GPU budget too, so scaling up to a much bigger model
+                wasn&apos;t an option either. That left three constraints at once: data that didn&apos;t cover every
+                case, limited VRAM/compute, and pretrained representations that weren&apos;t a great fit for the
+                domain to begin with.
               </p>
             </div>
 
             <div className="compare-grid">
               <div className="compare-card">
+                <img
+                  className="compare-card-img"
+                  src="/assets/drawmind/actually-already-knew.png"
+                  alt="A collage of everyday natural photos — people, cars, a dog, furniture, food, landscapes"
+                />
                 <h4>What the model already knew</h4>
                 <p>Natural photos — continuous color, texture, lighting, real-world object shapes. Millions of pretraining examples, none of them a line drawing.</p>
               </div>
               <div className="compare-card">
+                <img
+                  className="compare-card-img"
+                  src="/assets/drawmind/actually-had-to-read.png"
+                  alt="A collage of technical engineering drawings — thin black lines, small text, and repeated symbols on a plain white background"
+                />
                 <h4>What it actually had to read</h4>
-                <p>Sparse black-and-white geometry, dense repeated symbols, and three classes that differ mainly in context, not shape.</p>
+                <p>Sparse black-and-white geometry, dense repeated symbols, and three classes whose visual patterns partially overlap — telling them apart reliably takes both local structure and surrounding layout context.</p>
               </div>
             </div>
           </div>
@@ -193,15 +221,15 @@ export default function DrawMind() {
         <section className="case-section">
           <div className="wrap">
             <h2 className="case-h2"><span className="case-num">04</span>System in action</h2>
+
             <div className="case-body">
               <p>
-                Two capabilities built on top of the detection model, shown running end-to-end: automatic
-                detection and pixel-level segmentation of every View, Note, and Table region, and an AI
-                agent that reads a drawing closely enough to answer questions about it.
+                Automatic detection and pixel-level segmentation of every View, Note, and Table region on a
+                drawing — accurate and reliable end-to-end, driven by RT-DETR together with the targeted
+                image-processing and classification strategy from the section above.
               </p>
             </div>
-
-            <div className="case-video-frame">
+            <div className="case-video-frame" style={{ marginTop: 20 }}>
               <video
                 ref={detSegVideoRef}
                 className="case-video"
@@ -214,7 +242,14 @@ export default function DrawMind() {
             </div>
             <div className="diagram-caption">automatic detection &amp; segmentation, running live on a real drawing</div>
 
-            <div className="case-video-frame" style={{ marginTop: 40 }}>
+            <div className="case-body" style={{ marginTop: 40 }}>
+              <p>
+                An AI agent that reads a drawing deeply enough to answer questions about it — an LLM and a VLM
+                behind an orchestration layer that calls the right tool for the job, including custom tools
+                built specifically for this workflow.
+              </p>
+            </div>
+            <div className="case-video-frame" style={{ marginTop: 20 }}>
               <video
                 ref={agentVideoRef}
                 className="case-video"
@@ -231,15 +266,19 @@ export default function DrawMind() {
 
         <section className="case-section">
           <div className="wrap">
-            <h2 className="case-h2"><span className="case-num">05</span>Result</h2>
+            <h2 className="case-h2"><span className="case-num">05</span>Impact</h2>
             <div className="impact-list">
               <div className="impact-item">
                 <div className="impact-mark">▸</div>
-                <div className="impact-text">Shipped to the client&apos;s acceptance bar — high mAP with a near-zero false-negative rate on View/Note/Table detection.</div>
+                <div className="impact-text">Detecting and segmenting a complex drawing by hand took an engineer around 30 minutes; the same task now takes under 15 seconds.</div>
               </div>
               <div className="impact-item">
                 <div className="impact-mark">▸</div>
-                <div className="impact-text">Closer to classic computer-vision research than most of my generative-AI work: domain gap, data allocation under real constraints, and picking the metric that matched the actual business risk.</div>
+                <div className="impact-text">mAP above 0.95, well ahead of the ~0.7 typical of general-purpose detection systems on this kind of drawing.</div>
+              </div>
+              <div className="impact-item">
+                <div className="impact-mark">▸</div>
+                <div className="impact-text">The AI agent lets engineers pull information out of a drawing conversationally, instead of hunting through it by hand.</div>
               </div>
             </div>
           </div>

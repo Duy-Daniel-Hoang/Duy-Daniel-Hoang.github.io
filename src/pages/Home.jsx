@@ -200,11 +200,11 @@ export default function Home() {
                     <div className="proj-role">AI ENGINEER</div>
                   </div>
                   <p className="proj-desc">
-                    Detection and classification on technical engineering drawings — RT-DETR with a ResNet-101
-                    backbone, adapted from natural-image pretraining to tell <strong>View, Note, and Table</strong>{" "}
-                    elements apart despite heavy visual overlap between classes. The client&apos;s acceptance bar
-                    demanded a near-zero false-negative rate, met through a combination of training strategy, data
-                    allocation, and custom post-processing.
+                    An AI agent system that reads and reasons deeply over complex technical engineering drawings —
+                    orchestrating LLM/VLM capabilities and purpose-built tools to extract information and answer
+                    detailed questions. A production RT-DETR detection and segmentation pipeline serves as one of
+                    those tools, locating <strong>View, Note, and Table</strong> regions with mAP above 0.95 despite
+                    limited data, compute constraints, and heavy visual overlap between classes.
                   </p>
                   <div className="proj-tags">
                     <span className="tag">Object Detection</span>

@@ -107,7 +107,7 @@ export default function DrawMind() {
         <div className="hero-image-wrap">
           <img
             className="hero-image"
-            src="/assets/drawmind/drawmind-thumbnail.png"
+            src="/assets/drawmind/drawmind-thumbnail.webp"
             alt="DrawMind reading and classifying View, Note, and Table regions on a technical engineering drawing"
           />
         </div>
@@ -135,7 +135,7 @@ export default function DrawMind() {
             <div className="case-video-frame" style={{ marginTop: 28 }}>
               <img
                 className="case-video"
-                src="/assets/drawmind/problem.png"
+                src="/assets/drawmind/problem.webp"
                 alt="A real technical engineering drawing — multiple views, a detail callout, section cuts, and a parts table"
               />
             </div>
@@ -175,7 +175,7 @@ export default function DrawMind() {
               <div className="compare-card">
                 <img
                   className="compare-card-img"
-                  src="/assets/drawmind/actually-already-knew.png"
+                  src="/assets/drawmind/actually-already-knew.webp"
                   alt="A collage of everyday natural photos — people, cars, a dog, furniture, food, landscapes"
                 />
                 <h4>What the model already knew</h4>
@@ -184,7 +184,7 @@ export default function DrawMind() {
               <div className="compare-card">
                 <img
                   className="compare-card-img"
-                  src="/assets/drawmind/actually-had-to-read.png"
+                  src="/assets/drawmind/actually-had-to-read.webp"
                   alt="A collage of technical engineering drawings — thin black lines, small text, and repeated symbols on a plain white background"
                 />
                 <h4>What it actually had to read</h4>

@@ -202,7 +202,7 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
   background-image:
     linear-gradient(to top, color-mix(in srgb, #34d399 35%, transparent) 0%, transparent 65%),
     linear-gradient(rgba(12,15,21,0.82), rgba(12,15,21,0.86)),
-    url("/assets/drawmind/drawmind-thumbnail.png");
+    url("/assets/drawmind/drawmind-thumbnail.webp");
   background-size:cover; background-position:center 30%;
 }
 .proj-card--blue{ background-image:linear-gradient(to top, color-mix(in srgb, #4f8cff 38%, transparent) 0%, transparent 65%); }

@@ -60,8 +60,8 @@ export default function DrawMind() {
   return (
     <>
       <Seo
-        title="DrawMind — Detection Model for Engineering Drawings | Hoang Tan Duy"
-        description="Teaching a detection model to read technical engineering drawings — hitting a client acceptance bar that treated a missed detection as far more costly than a false alarm."
+        title="DrawMind — AI Agent for Engineering Drawings | Hoang Tan Duy"
+        description="An AI agent system that combines LLM/VLM reasoning with specialized detection and segmentation tools to understand complex technical engineering drawings in depth."
       />
       <CaseNav label="DRAWMIND" />
 
@@ -72,8 +72,9 @@ export default function DrawMind() {
             <img className="case-logo" src="/assets/drawmind/drawmind-logo.png" alt="DrawMind" />
           </h1>
           <p className="case-tagline">
-            Teaching a detection model to read <strong>technical engineering drawings</strong> — and hitting a client
-            acceptance bar that treated a missed detection as far more costly than a false alarm.
+            An <strong>AI agent system</strong> built to understand complex technical engineering drawings in depth —
+            combining LLM/VLM reasoning with specialized detection and segmentation tools that ground the agent in
+            the drawing&apos;s structure and details.
           </p>
 
           <div className="case-meta-grid">

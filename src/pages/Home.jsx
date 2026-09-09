@@ -168,7 +168,13 @@ export default function Home() {
                   <div className="bk-tr" />
                   <div className="bk-bl" />
                   <div className="proj-top">
-                    <div className="proj-title">Flickrz</div>
+                    <div className="proj-title proj-title--logo">
+                      <img
+                        className="proj-logo proj-logo--flickrz"
+                        src="/assets/flickrz/logo-flickrz.svg"
+                        alt="Flickrz"
+                      />
+                    </div>
                     <div className="proj-role">AI LEADER</div>
                   </div>
                   <p className="proj-desc">
@@ -196,7 +202,13 @@ export default function Home() {
                   <div className="bk-tr" />
                   <div className="bk-bl" />
                   <div className="proj-top">
-                    <div className="proj-title">DrawMind</div>
+                    <div className="proj-title proj-title--logo">
+                      <img
+                        className="proj-logo proj-logo--drawmind"
+                        src="/assets/drawmind/drawmind-logo.png"
+                        alt="DrawMind"
+                      />
+                    </div>
                     <div className="proj-role">AI ENGINEER</div>
                   </div>
                   <p className="proj-desc">

@@ -215,8 +215,12 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
 .proj-card--blue{ background-image:linear-gradient(to top, color-mix(in srgb, #4f8cff 38%, transparent) 0%, transparent 65%); }
 .proj-card--redorange{ background-image:linear-gradient(to top, color-mix(in srgb, #ff5a36 38%, transparent) 0%, transparent 65%); }
 .proj-card-link{ text-decoration:none; display:block; color:inherit; cursor:pointer; }
-.proj-top{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
+.proj-top{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
 .proj-title{ font-size:19px; font-weight:700; color:var(--ink); }
+.proj-title--logo{ display:flex; align-items:center; min-height:60px; max-width:68%; }
+.proj-logo{ display:block; width:auto; max-width:100%; object-fit:contain; object-position:left center; }
+.proj-logo--flickrz{ height:60px; }
+.proj-logo--drawmind{ height:50px; }
 .proj-role{ font-family:'Space Mono', monospace; font-size:11px; color:var(--ink-faint); white-space:nowrap; }
 .proj-desc{ margin-top:10px; font-size:14.8px; color:#b9bfcf; }
 .proj-tags{ margin-top:16px; display:flex; flex-wrap:wrap; gap:7px; }

@@ -1,11 +1,21 @@
 import { useEffect, useRef } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 const COLORS = [
   [79, 216, 196],
   [180, 140, 242],
   [255, 138, 61],
 ];
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [pathname]);
+
+  return null;
+}
 
 function InteractiveBackground() {
   const canvasRef = useRef(null);
@@ -191,6 +201,7 @@ function InteractiveBackground() {
 export default function PortfolioLayout() {
   return (
     <div className="portfolio-root">
+      <ScrollToTop />
       <InteractiveBackground />
       <div className="portfolio-content">
         <Outlet />

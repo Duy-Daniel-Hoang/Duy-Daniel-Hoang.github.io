@@ -15,6 +15,8 @@ function useAutoplayInView() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return undefined;
+    el.muted = true;
+    el.defaultMuted = true;
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) el.play().catch(() => {});
@@ -234,6 +236,7 @@ export default function DrawMind() {
                 ref={detSegVideoRef}
                 className="case-video"
                 src="/assets/drawmind/det-seg-vid.mp4"
+                poster="/assets/drawmind/det-seg-poster.webp"
                 loop
                 muted
                 playsInline
@@ -254,6 +257,7 @@ export default function DrawMind() {
                 ref={agentVideoRef}
                 className="case-video"
                 src="/assets/drawmind/aigent-understands-drawings.mp4"
+                poster="/assets/drawmind/aigent-understands-drawings-poster.webp"
                 loop
                 muted
                 playsInline

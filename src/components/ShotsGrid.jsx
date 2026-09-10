@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocale } from "../i18n/LocaleContext.jsx";
 
 function Shot({ s, className = "", ...touchProps }) {
   return (
@@ -22,6 +23,7 @@ function Shot({ s, className = "", ...touchProps }) {
 }
 
 export default function ShotsGrid({ shots }) {
+  const { t } = useLocale();
   const [activeIdx, setActiveIdx] = useState(null);
   const [slideOpen, setSlideOpen] = useState(false);
   const [slideIdx, setSlideIdx] = useState(0);
@@ -57,10 +59,10 @@ export default function ShotsGrid({ shots }) {
     <div className="shots-wrap">
       <div className="shots-toggle">
         <button type="button" className={!slideOpen ? "active" : ""} onClick={closeSlideshow}>
-          ▦ Grid
+          ▦ {t("ui.grid")}
         </button>
         <button type="button" className={slideOpen ? "active" : ""} onClick={() => openSlideshow(slideIdx)}>
-          ⛶ Slideshow
+          ⛶ {t("ui.slideshow")}
         </button>
       </div>
 
@@ -79,7 +81,7 @@ export default function ShotsGrid({ shots }) {
 
       {slideOpen && (
         <div className="shots-lightbox" onClick={closeSlideshow}>
-          <button type="button" className="shots-lightbox-close" onClick={closeSlideshow} aria-label="Close slideshow">
+          <button type="button" className="shots-lightbox-close" onClick={closeSlideshow} aria-label={t("ui.close")}>
             ✕
           </button>
           <button
@@ -89,7 +91,7 @@ export default function ShotsGrid({ shots }) {
               e.stopPropagation();
               prev();
             }}
-            aria-label="Previous screenshot"
+            aria-label={t("ui.previous")}
           >
             ‹
           </button>
@@ -110,7 +112,7 @@ export default function ShotsGrid({ shots }) {
               e.stopPropagation();
               next();
             }}
-            aria-label="Next screenshot"
+            aria-label={t("ui.next")}
           >
             ›
           </button>

@@ -1,0 +1,7 @@
+export const messages = {
+  en: { identity: { name: "HOANG TAN DUY" }, nav: { portfolio: "Portfolio", back: "Back to portfolio" }, ui: { language: "Language", grid: "Grid", slideshow: "Slideshow", close: "Close slideshow", previous: "Previous screenshot", next: "Next screenshot" }, footer: { role: "AI / COMPUTER VISION ENGINEER", location: "HANOI, VIETNAM" } },
+  vi: { identity: { name: "HOÀNG TÂN DUY" }, nav: { portfolio: "Portfolio", back: "Về portfolio" }, ui: { language: "Ngôn ngữ", grid: "Lưới", slideshow: "Trình chiếu", close: "Đóng trình chiếu", previous: "Ảnh trước", next: "Ảnh tiếp theo" }, footer: { role: "KỸ SƯ AI / COMPUTER VISION", location: "HÀ NỘI, VIỆT NAM" } },
+  ja: { identity: { name: "HOANG TAN DUY" }, nav: { portfolio: "ポートフォリオ", back: "ポートフォリオへ" }, ui: { language: "言語", grid: "一覧", slideshow: "スライド", close: "スライドを閉じる", previous: "前の画像", next: "次の画像" }, footer: { role: "AI・コンピュータビジョンエンジニア", location: "ベトナム・ハノイ" } },
+  ko: { identity: { name: "HOANG TAN DUY" }, nav: { portfolio: "포트폴리오", back: "포트폴리오로" }, ui: { language: "언어", grid: "목록", slideshow: "슬라이드", close: "슬라이드 닫기", previous: "이전 이미지", next: "다음 이미지" }, footer: { role: "AI / 컴퓨터 비전 엔지니어", location: "베트남 하노이" } },
+};
+export function getMessage(locale, path) { const read = (source) => path.split(".").reduce((value, key) => value?.[key], source); return read(messages[locale]) ?? read(messages.en) ?? path; }

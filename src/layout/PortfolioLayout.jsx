@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import { LocaleProvider } from "../i18n/LocaleContext.jsx";
 
 const COLORS = [
   [79, 216, 196],
@@ -200,12 +201,14 @@ function InteractiveBackground() {
 
 export default function PortfolioLayout() {
   return (
-    <div className="portfolio-root">
-      <ScrollToTop />
-      <InteractiveBackground />
-      <div className="portfolio-content">
-        <Outlet />
+    <LocaleProvider>
+      <div className="portfolio-root">
+        <ScrollToTop />
+        <InteractiveBackground />
+        <div className="portfolio-content">
+          <Outlet />
+        </div>
       </div>
-    </div>
+    </LocaleProvider>
   );
 }

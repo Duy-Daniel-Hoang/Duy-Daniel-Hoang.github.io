@@ -3,6 +3,7 @@ import Footer from "../components/Footer.jsx";
 import SkillBars from "../components/SkillBars.jsx";
 import Seo from "../components/Seo.jsx";
 import HeroPipeline from "../components/HeroPipeline.jsx";
+import LanguageSwitcher from "../components/LanguageSwitcher.jsx";
 
 const CORE_SKILLS = [
   ["Computer Vision", 7],
@@ -38,6 +39,7 @@ export default function Home() {
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
+          <LanguageSwitcher />
         </div>
       </nav>
 
@@ -215,7 +217,7 @@ export default function Home() {
                     An AI agent system that reads and reasons deeply over complex technical engineering drawings —
                     orchestrating LLM/VLM capabilities and purpose-built tools to extract information and answer
                     detailed questions. A production RT-DETR detection and segmentation pipeline serves as one of
-                    those tools, locating <strong>View, Note, and Table</strong> regions with mAP above 0.95 despite
+                    those tools, locating View, Note, and Table regions with <strong>mAP above 0.95</strong> despite
                     limited data, compute constraints, and heavy visual overlap between classes.
                   </p>
                   <div className="proj-tags">

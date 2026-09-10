@@ -2,16 +2,16 @@ import { lazy, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import PortfolioLayout from "./layout/PortfolioLayout.jsx";
-import Home from "./pages/Home.jsx";
+import Home from "./pages/LocalizedHome.jsx";
 // Not lazy: these 3 routes are prerendered to their own static HTML at
 // build time, so hydration needs their markup available immediately —
 // lazy-loading them caused a hydration mismatch (the saved static HTML
 // already has resolved content, but the client starts from an unresolved
 // Suspense state), forcing React to discard and re-render from scratch,
 // which showed up as a visible flash on first load.
-import Flickrz from "./pages/projects/Flickrz.jsx";
-import DrawMind from "./pages/projects/DrawMind.jsx";
-import TryNectar from "./pages/projects/TryNectar.jsx";
+import Flickrz from "./pages/projects/LocalizedFlickrz.jsx";
+import DrawMind from "./pages/projects/LocalizedDrawMind.jsx";
+import TryNectar from "./pages/projects/LocalizedTryNectar.jsx";
 
 // The internal AI Webtoon admin mockup (/mockups/*) and its screenshots are
 // dev-only — excluded from the public repo (see .gitignore) and from

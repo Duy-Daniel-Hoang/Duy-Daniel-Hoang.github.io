@@ -11,7 +11,7 @@ export default function LocalizedTryNectar() {
     <Seo title={c.seoTitle} description={c.seoDescription} />
     <CaseNav label="TRYNECTAR" />
     <header className="case-hero"><div className="wrap">
-      <div className="case-kicker">{c.kicker}</div><h1 className="case-title">TryNectar</h1>
+      <div className="case-kicker">{c.kicker}</div><h1 className="case-title trynectar-wordmark"><img src="/assets/trynectar/trynectar-logo.png" alt="TryNectar" /></h1>
       <p className="case-tagline">{c.taglineA}<strong>{c.taglineStrong}</strong>{c.taglineB}</p>
       <div className="case-meta-grid">
         {c.labels.slice(0, 3).map((label, i) => <div className="meta-item" key={label}><div className="meta-label">{label}</div><div className="meta-value">{c.values[i]}</div></div>)}

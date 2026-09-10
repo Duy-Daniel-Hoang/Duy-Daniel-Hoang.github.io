@@ -16,7 +16,7 @@ const PROJECTS = [
   { name: "Flickrz", to: "/projects/flickrz", theme: "orange", tags: ["Multi-Agent Orchestration", "LangGraph", "LoRA", "ComfyUI", "FastAPI"], logo: "/assets/flickrz/logo-flickrz.svg", logoClass: "flickrz" },
   { name: "DrawMind", to: "/projects/drawmind", theme: "green", tags: ["Object Detection", "RT-DETR", "Domain Adaptation", "CVAT"], logo: "/assets/drawmind/drawmind-logo.png", logoClass: "drawmind" },
   { name: "Bloom", theme: "blue", tags: ["LangGraph", "RAG", "Multi-Agent", "FastAPI"] },
-  { name: "TryNectar", to: "/projects/trynectar", theme: "redorange", tags: ["Multimodal AI", "ComfyUI", "LangGraph", "RunPod"] },
+  { name: "TryNectar", to: "/projects/trynectar", theme: "redorange", tags: ["Multimodal AI", "ComfyUI", "LangGraph", "RunPod"], logo: "/assets/trynectar/trynectar-logo.png", logoClass: "trynectar" },
 ];
 
 function ProjectCard({ project, copy, role }) {

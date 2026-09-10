@@ -14,7 +14,7 @@ export default function TryNectar() {
       <header className="case-hero">
         <div className="wrap">
           <div className="case-kicker">CASE STUDY · 03 / 03</div>
-          <h1 className="case-title">TryNectar</h1>
+          <h1 className="case-title trynectar-wordmark"><img src="/assets/trynectar/trynectar-logo.png" alt="TryNectar" /></h1>
           <p className="case-tagline">
             A <strong>live, profitable</strong> multimodal AI companion product — and the engineering problem of
             keeping a character feeling like the same character across text, image, and video.

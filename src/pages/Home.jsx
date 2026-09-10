@@ -260,7 +260,7 @@ export default function Home() {
                   <div className="bk-tr" />
                   <div className="bk-bl" />
                   <div className="proj-top">
-                    <div className="proj-title">TryNectar</div>
+                    <div className="proj-title proj-title--logo"><img className="proj-logo proj-logo--trynectar" src="/assets/trynectar/trynectar-logo.png" alt="TryNectar" /></div>
                     <div className="proj-role">AI ENGINEER</div>
                   </div>
                   <p className="proj-desc">

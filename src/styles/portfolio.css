@@ -234,7 +234,13 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
   background-size:cover; background-position:center 30%;
 }
 .proj-card--blue{ background-image:linear-gradient(to top, color-mix(in srgb, #4f8cff 38%, transparent) 0%, transparent 65%); }
-.proj-card--redorange{ background-image:linear-gradient(to top, color-mix(in srgb, #ff5a36 38%, transparent) 0%, transparent 65%); }
+.proj-card--redorange{
+  background-image:
+    linear-gradient(to top, color-mix(in srgb, #ff5a36 38%, transparent) 0%, transparent 65%),
+    linear-gradient(rgba(12,15,21,0.76), rgba(12,15,21,0.84)),
+    url("/assets/trynectar/trynectar-thumbnail.webp");
+  background-size:cover; background-position:center center;
+}
 .proj-card-link{ text-decoration:none; display:block; height:100%; color:inherit; cursor:pointer; }
 .proj-top{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
 .proj-title{ font-size:19px; font-weight:700; color:var(--ink); }

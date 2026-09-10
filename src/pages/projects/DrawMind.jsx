@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import CaseNav from "../../components/CaseNav.jsx";
 import CaseFoot from "../../components/CaseFoot.jsx";
+import MapComparisonChart from "../../components/MapComparisonChart.jsx";
 import AgentFlow from "../../components/AgentFlow.jsx";
 import Seo from "../../components/Seo.jsx";
 
@@ -281,6 +282,7 @@ export default function DrawMind() {
                 <div className="impact-mark">▸</div>
                 <div className="impact-text">mAP above 0.95, well ahead of the ~0.7 typical of general-purpose detection systems on this kind of drawing.</div>
               </div>
+              <MapComparisonChart />
               <div className="impact-item">
                 <div className="impact-mark">▸</div>
                 <div className="impact-text">The AI agent lets engineers pull information out of a drawing conversationally, instead of hunting through it by hand.</div>

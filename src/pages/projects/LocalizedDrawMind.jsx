@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import AgentFlow from "../../components/AgentFlow.jsx";
 import CaseFoot from "../../components/CaseFoot.jsx";
+import MapComparisonChart from "../../components/MapComparisonChart.jsx";
 import CaseNav from "../../components/CaseNav.jsx";
 import Seo from "../../components/Seo.jsx";
 import { DRAWMIND_COPY } from "../../i18n/drawmindCopy.js";
@@ -52,7 +53,7 @@ function LocalizedContent({ c }) {
       <section className="case-section"><div className="wrap"><h2 className="case-h2"><span className="case-num">04</span>{c.systemTitle}</h2><div className="case-body"><p>{c.detect}</p></div><div className="case-video-frame" style={{ marginTop: 20 }}><video ref={detectionRef} className="case-video" src="/assets/drawmind/det-seg-vid.mp4" poster="/assets/drawmind/det-seg-poster.webp" loop muted playsInline preload="metadata" /></div><div className="diagram-caption">{c.detectCaption}</div>
         <div className="case-body" style={{ marginTop: 40 }}><p>{c.agent}</p></div><div className="case-video-frame" style={{ marginTop: 20 }}><video ref={agentRef} className="case-video" src="/assets/drawmind/aigent-understands-drawings.mp4" poster="/assets/drawmind/aigent-understands-drawings-poster.webp" loop muted playsInline preload="metadata" /></div><div className="diagram-caption">{c.agentCaption}</div>
       </div></section>
-      <section className="case-section"><div className="wrap"><h2 className="case-h2"><span className="case-num">05</span>{c.impactTitle}</h2><div className="impact-list">{c.impacts.map((impact) => <div className="impact-item" key={impact}><div className="impact-mark">▸</div><div className="impact-text">{impact}</div></div>)}</div></div></section>
+      <section className="case-section"><div className="wrap"><h2 className="case-h2"><span className="case-num">05</span>{c.impactTitle}</h2><div className="impact-list">{c.impacts.map((impact, index) => <div className="impact-entry" key={impact}><div className="impact-item"><div className="impact-mark">▸</div><div className="impact-text">{impact}</div></div>{index === 1 && <MapComparisonChart />}</div>)}</div></div></section>
     </main>
     <CaseFoot others={[{ label: "Flickrz", to: "/projects/flickrz" }, { label: "TryNectar", to: "/projects/trynectar" }]} />
   </>;

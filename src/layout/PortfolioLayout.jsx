@@ -44,15 +44,25 @@ function InteractiveBackground() {
       energy: 0,
     };
 
-    const makeParticle = (index) => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      vx: 0,
-      vy: 0,
-      radius: 0.7 + Math.random() * 1.8,
-      color: COLORS[index % COLORS.length],
-      depth: 0.35 + Math.random() * 0.85,
-    });
+    const makeParticle = (index) => {
+      const side = index % 2 === 0 ? -1 : 1;
+      const halfWidth = width / 2;
+      // Cubic edge weighting keeps a sparse trail through the content while
+      // making density fall continuously toward the center.
+      const edgeOffset = Math.pow(Math.random(), 3) * halfWidth;
+      const anchorX = side < 0 ? edgeOffset : width - edgeOffset;
+
+      return {
+        x: anchorX,
+        anchorX,
+        y: Math.random() * height,
+        vx: 0,
+        vy: 0,
+        radius: 0.7 + Math.random() * 1.8,
+        color: COLORS[index % COLORS.length],
+        depth: 0.35 + Math.random() * 0.85,
+      };
+    };
 
     const resize = () => {
       width = window.innerWidth;
@@ -87,22 +97,23 @@ function InteractiveBackground() {
       pointer.energy *= 0.8;
 
       context.globalCompositeOperation = "lighter";
+      const pointerEdgeBias = Math.min(1, Math.abs(pointer.x - width / 2) / Math.max(1, width * 0.42));
       glow(
         pointer.x,
         pointer.y,
         Math.min(width, height) * 0.32,
         COLORS[0],
-        pointer.active ? 0.075 : 0.04
+        pointer.active ? 0.022 + pointerEdgeBias * 0.053 : 0.018
       );
       glow(
-        width * 0.18,
+        width * 0.1,
         height * 0.72,
         Math.min(width, height) * 0.42,
         COLORS[1],
         0.035
       );
       glow(
-        width * 0.82,
+        width * 0.9,
         height * 0.2,
         Math.min(width, height) * 0.36,
         COLORS[2],
@@ -119,20 +130,28 @@ function InteractiveBackground() {
 
         particle.vx += (dx / distance) * influence * 0.00065 * dt;
         particle.vy += (dy / distance) * influence * 0.0005 * dt;
+        particle.vx += (particle.anchorX - particle.x) * 0.000025 * dt;
         particle.vx *= 0.88;
         particle.vy *= 0.88;
         particle.x += particle.vx * dt * particle.depth;
         particle.y += (particle.vy + scrollVelocity * particle.depth) * dt;
 
         const margin = 30;
-        if (particle.x < -margin) particle.x = width + margin;
-        if (particle.x > width + margin) particle.x = -margin;
+        if (particle.x < -margin) {
+          particle.x = -margin;
+          particle.vx = Math.abs(particle.vx) * 0.45;
+        }
+        if (particle.x > width + margin) {
+          particle.x = width + margin;
+          particle.vx = -Math.abs(particle.vx) * 0.45;
+        }
         if (particle.y < -margin) particle.y = height + margin;
         if (particle.y > height + margin) particle.y = -margin;
 
-        glow(particle.x, particle.y, 18 + particle.radius * 9, particle.color, 0.065);
+        const edgeStrength = 0.35 + Math.min(1, Math.abs(particle.x - width / 2) / Math.max(1, width * 0.44)) * 0.65;
+        glow(particle.x, particle.y, 18 + particle.radius * 9, particle.color, 0.065 * edgeStrength);
         context.beginPath();
-        context.fillStyle = "rgba(" + particle.color.join(",") + ",0.58)";
+        context.fillStyle = "rgba(" + particle.color.join(",") + "," + (0.3 + edgeStrength * 0.28) + ")";
         context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
         context.fill();
       }

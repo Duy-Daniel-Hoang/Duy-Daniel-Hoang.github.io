@@ -169,7 +169,55 @@ export default function DrawMind() {
 
         <section className="case-section">
           <div className="wrap">
-            <h2 className="case-h2"><span className="case-num">03</span>Domain gap: a real-world model, meeting a line drawing</h2>
+            <h2 className="case-h2"><span className="case-num">03</span>System in action</h2>
+
+            <div className="case-body">
+              <p>
+                Automatic detection and pixel-level segmentation of every View, Note, and Table region on a
+                drawing — accurate and reliable end-to-end, driven by RT-DETR together with the targeted
+                image-processing and classification strategy from the section above.
+              </p>
+            </div>
+            <div className="case-video-frame" style={{ marginTop: 20 }}>
+              <video
+                ref={detSegVideoRef}
+                className="case-video"
+                src="/assets/drawmind/det-seg-vid.mp4"
+                poster="/assets/drawmind/det-seg-poster.webp"
+                loop
+                muted
+                playsInline
+                preload="metadata"
+              />
+            </div>
+            <div className="diagram-caption">automatic detection &amp; segmentation, running live on a real drawing</div>
+
+            <div className="case-body" style={{ marginTop: 40 }}>
+              <p>
+                An AI agent that reads a drawing deeply enough to answer questions about it — an LLM and a VLM
+                behind an orchestration layer that calls the right tool for the job, including custom tools
+                built specifically for this workflow.
+              </p>
+            </div>
+            <div className="case-video-frame" style={{ marginTop: 20 }}>
+              <video
+                ref={agentVideoRef}
+                className="case-video"
+                src="/assets/drawmind/aigent-understands-drawings.mp4"
+                poster="/assets/drawmind/aigent-understands-drawings-poster.webp"
+                loop
+                muted
+                playsInline
+                preload="metadata"
+              />
+            </div>
+            <div className="diagram-caption">an AI agent reading a drawing closely enough to answer questions about it</div>
+          </div>
+        </section>
+
+        <section className="case-section">
+          <div className="wrap">
+            <h2 className="case-h2"><span className="case-num">04</span>Domain gap: a real-world model, meeting a line drawing</h2>
             <div className="case-body">
               <p>
                 RT-DETR-ResNet101 was pretrained on normal photos — people, cars, everyday objects. Its low-level
@@ -221,7 +269,7 @@ export default function DrawMind() {
 
         <section className="case-section">
           <div className="wrap">
-            <h2 className="case-h2"><span className="case-num">04</span>The approach: work around the constraints, not against them</h2>
+            <h2 className="case-h2"><span className="case-num">05</span>The approach: work around the constraints, not against them</h2>
             <div className="case-body">
               <p>
                 Instead of chasing &quot;more data, bigger model,&quot; the team looked closely at exactly which
@@ -240,54 +288,6 @@ export default function DrawMind() {
               <span className="tag">Error Analysis</span>
               <span className="tag">Post-processing</span>
             </div>
-          </div>
-        </section>
-
-        <section className="case-section">
-          <div className="wrap">
-            <h2 className="case-h2"><span className="case-num">05</span>System in action</h2>
-
-            <div className="case-body">
-              <p>
-                Automatic detection and pixel-level segmentation of every View, Note, and Table region on a
-                drawing — accurate and reliable end-to-end, driven by RT-DETR together with the targeted
-                image-processing and classification strategy from the section above.
-              </p>
-            </div>
-            <div className="case-video-frame" style={{ marginTop: 20 }}>
-              <video
-                ref={detSegVideoRef}
-                className="case-video"
-                src="/assets/drawmind/det-seg-vid.mp4"
-                poster="/assets/drawmind/det-seg-poster.webp"
-                loop
-                muted
-                playsInline
-                preload="metadata"
-              />
-            </div>
-            <div className="diagram-caption">automatic detection &amp; segmentation, running live on a real drawing</div>
-
-            <div className="case-body" style={{ marginTop: 40 }}>
-              <p>
-                An AI agent that reads a drawing deeply enough to answer questions about it — an LLM and a VLM
-                behind an orchestration layer that calls the right tool for the job, including custom tools
-                built specifically for this workflow.
-              </p>
-            </div>
-            <div className="case-video-frame" style={{ marginTop: 20 }}>
-              <video
-                ref={agentVideoRef}
-                className="case-video"
-                src="/assets/drawmind/aigent-understands-drawings.mp4"
-                poster="/assets/drawmind/aigent-understands-drawings-poster.webp"
-                loop
-                muted
-                playsInline
-                preload="metadata"
-              />
-            </div>
-            <div className="diagram-caption">an AI agent reading a drawing closely enough to answer questions about it</div>
           </div>
         </section>
       </main>

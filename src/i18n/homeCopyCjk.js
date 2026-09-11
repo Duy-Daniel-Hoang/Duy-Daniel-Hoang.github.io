@@ -18,7 +18,7 @@ export const HOME_CJK = {
       { descA: "テキスト・画像・動画を統合した、稼働・収益化済みのマルチモーダルAIコンパニオン。ComfyUI、LangGraph、動的persona注入により応答速度と一貫性を改善しました。", strong: "", descB: "", link: "ケーススタディを見る" },
     ],
     secondary: [["2D図面生成", "GNNとPoint Cloud Transformerで3D形状を理解し、構造化2D図面を生成。主要特徴クラスで社内精度90%以上。"], ["RAG法令検索", "交通安全法令の出典付き検索。chunking、metadata filtering、LLM re-rankingを最適化し実務へ導入。"], ["マーケティング画像生成", "社内CMSに統合したStable Diffusion基盤により、制作期間を数日から数分へ短縮。"]],
-    skillsLabel: "04 · スキル", skillsTitle: "実務経験", skillsDesc: "AI/MLキャリア7年以上のうち、各分野の実務経験年数です。", core: "AI / ML", tools: "ツール・インフラ", education: "学歴", university: "ハノイ工科大学", major: "情報技術（Global ICT）", languages: "言語", native: "ベトナム語 — ネイティブ", fluent: "英語 — ビジネス上級（C1）", contactLabel: "05 · お問い合わせ", contactTitle: "お気軽にご連絡ください。", contactDesc: "Computer Vision・Applied AI領域の新たな機会を検討しています。LinkedInからのご連絡が最もスムーズです。", locationLabel: "所在地", location: "ベトナム・ハノイ",
+    skillsLabel: "04 · スキル", skillsTitle: "チームにもたらす力", skillsDesc: "応用AIの専門性、本番運用ツール、実践的な技術リーダーシップを組み合わせて成果へつなげます。", core: "コア AI / ML", tools: "ツール・インフラ", leadership: "チームリーダーシップ", education: "学歴", university: "ハノイ工科大学", major: "情報技術（Global ICT）", languages: "言語", native: "ベトナム語 — ネイティブ", fluent: "英語 — ビジネス上級（C1）", contactLabel: "05 · お問い合わせ", contactTitle: "お気軽にご連絡ください。", contactDesc: "Computer Vision・Applied AI領域の新たな機会を検討しています。LinkedInからのご連絡が最もスムーズです。", locationLabel: "所在地", location: "ベトナム・ハノイ",
   },
   ko: {
     ...common,
@@ -36,6 +36,6 @@ export const HOME_CJK = {
       { descA: "텍스트·이미지·영상을 통합한 운영 및 수익화 중인 멀티모달 AI companion. ComfyUI, LangGraph, 동적 persona 주입으로 지연 시간과 캐릭터 일관성을 개선했습니다.", strong: "", descB: "", link: "사례 보기" },
     ],
     secondary: [["2D 도면 생성", "GNN과 Point Cloud Transformer로 3D 형상을 이해하고 구조화된 2D 도면을 생성하며 주요 feature class에서 내부 정확도 90% 이상을 달성했습니다."], ["RAG 법률 검색", "교통안전 법령의 출처 기반 검색으로 chunking, metadata filtering, LLM re-ranking을 최적화해 실무에 도입했습니다."], ["마케팅 이미지 생성", "사내 CMS에 통합한 Stable Diffusion 도구로 제작 기간을 수일에서 수분으로 단축했습니다."]],
-    skillsLabel: "04 · 기술", skillsTitle: "분야별 실무 경험", skillsDesc: "7년 이상의 AI/ML 경력 중 각 분야의 실무 경험 기간입니다.", core: "AI / ML 핵심 역량", tools: "도구 및 인프라", education: "학력", university: "하노이 과학기술대학교", major: "정보기술(Global ICT)", languages: "언어", native: "베트남어 — 모국어", fluent: "영어 — 유창함(C1)", contactLabel: "05 · 연락처", contactTitle: "함께 이야기해요.", contactDesc: "Computer Vision 및 Applied AI 분야의 새로운 기회를 찾고 있습니다. LinkedIn으로 가장 빠르게 연락하실 수 있습니다.", locationLabel: "위치", location: "베트남 하노이",
+    skillsLabel: "04 · 기술", skillsTitle: "팀에 기여하는 핵심 역량", skillsDesc: "응용 AI 전문성, 프로덕션 도구, 실무 중심의 기술 리더십을 결합해 성과를 만듭니다.", core: "Core AI / ML", tools: "도구 및 인프라", leadership: "팀 리더십", education: "학력", university: "하노이 과학기술대학교", major: "정보기술(Global ICT)", languages: "언어", native: "베트남어 — 모국어", fluent: "영어 — 유창함(C1)", contactLabel: "05 · 연락처", contactTitle: "함께 이야기해요.", contactDesc: "Computer Vision 및 Applied AI 분야의 새로운 기회를 찾고 있습니다. LinkedIn으로 가장 빠르게 연락하실 수 있습니다.", locationLabel: "위치", location: "베트남 하노이",
   },
 };

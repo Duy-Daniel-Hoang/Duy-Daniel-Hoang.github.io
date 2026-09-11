@@ -148,7 +148,28 @@ export default function DrawMind() {
 
         <section className="case-section">
           <div className="wrap">
-            <h2 className="case-h2"><span className="case-num">02</span>Domain gap: a real-world model, meeting a line drawing</h2>
+            <h2 className="case-h2"><span className="case-num">02</span>Project impact &amp; outcomes</h2>
+            <div className="impact-list">
+              <div className="impact-item">
+                <div className="impact-mark">▸</div>
+                <div className="impact-text">Detecting and segmenting a complex drawing by hand took an engineer around 30 minutes; the same task now takes under 15 seconds.</div>
+              </div>
+              <div className="impact-item">
+                <div className="impact-mark">▸</div>
+                <div className="impact-text">mAP above 0.95, well ahead of the ~0.7 typical of general-purpose detection systems on this kind of drawing.</div>
+              </div>
+              <MapComparisonChart />
+              <div className="impact-item">
+                <div className="impact-mark">▸</div>
+                <div className="impact-text">The AI agent lets engineers pull information out of a drawing conversationally, instead of hunting through it by hand.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="case-section">
+          <div className="wrap">
+            <h2 className="case-h2"><span className="case-num">03</span>Domain gap: a real-world model, meeting a line drawing</h2>
             <div className="case-body">
               <p>
                 RT-DETR-ResNet101 was pretrained on normal photos — people, cars, everyday objects. Its low-level
@@ -200,7 +221,7 @@ export default function DrawMind() {
 
         <section className="case-section">
           <div className="wrap">
-            <h2 className="case-h2"><span className="case-num">03</span>The approach: work around the constraints, not against them</h2>
+            <h2 className="case-h2"><span className="case-num">04</span>The approach: work around the constraints, not against them</h2>
             <div className="case-body">
               <p>
                 Instead of chasing &quot;more data, bigger model,&quot; the team looked closely at exactly which
@@ -224,7 +245,7 @@ export default function DrawMind() {
 
         <section className="case-section">
           <div className="wrap">
-            <h2 className="case-h2"><span className="case-num">04</span>System in action</h2>
+            <h2 className="case-h2"><span className="case-num">05</span>System in action</h2>
 
             <div className="case-body">
               <p>
@@ -267,27 +288,6 @@ export default function DrawMind() {
               />
             </div>
             <div className="diagram-caption">an AI agent reading a drawing closely enough to answer questions about it</div>
-          </div>
-        </section>
-
-        <section className="case-section">
-          <div className="wrap">
-            <h2 className="case-h2"><span className="case-num">05</span>Impact</h2>
-            <div className="impact-list">
-              <div className="impact-item">
-                <div className="impact-mark">▸</div>
-                <div className="impact-text">Detecting and segmenting a complex drawing by hand took an engineer around 30 minutes; the same task now takes under 15 seconds.</div>
-              </div>
-              <div className="impact-item">
-                <div className="impact-mark">▸</div>
-                <div className="impact-text">mAP above 0.95, well ahead of the ~0.7 typical of general-purpose detection systems on this kind of drawing.</div>
-              </div>
-              <MapComparisonChart />
-              <div className="impact-item">
-                <div className="impact-mark">▸</div>
-                <div className="impact-text">The AI agent lets engineers pull information out of a drawing conversationally, instead of hunting through it by hand.</div>
-              </div>
-            </div>
           </div>
         </section>
       </main>

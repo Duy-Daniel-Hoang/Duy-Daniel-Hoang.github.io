@@ -163,8 +163,28 @@ export default function Flickrz() {
         </section>
 
         <section className="case-section">
+          <div className="wrap">
+            <h2 className="case-h2"><span className="case-num">02</span>Project impact &amp; outcomes</h2>
+            <div className="impact-list">
+              <div className="impact-item">
+                <div className="impact-mark">▸</div>
+                <div className="impact-text">Comic production time dropped from close to a year to a few months per series.</div>
+              </div>
+              <div className="impact-item">
+                <div className="impact-mark">▸</div>
+                <div className="impact-text">The platform secured multiple funding rounds and became a core product in the client&apos;s comic creation workflow.</div>
+              </div>
+              <div className="impact-item">
+                <div className="impact-mark">▸</div>
+                <div className="impact-text">Character identity stays consistent across hundreds of panels per chapter — the hardest part of production-grade generative AI for sequential art.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="case-section">
           <div className="wrap-wide">
-            <h2 className="case-h2"><span className="case-num">02</span>A multi-agent pipeline, not one big agent</h2>
+            <h2 className="case-h2"><span className="case-num">03</span>A multi-agent pipeline, not one big agent</h2>
             <div className="case-body">
               <p>
                 The system is split across several specialized agents, each responsible for one part of the pipeline,
@@ -193,7 +213,7 @@ export default function Flickrz() {
 
         <section className="case-section">
           <div className="wrap-wide">
-            <h2 className="case-h2"><span className="case-num">03</span>Sample output</h2>
+            <h2 className="case-h2"><span className="case-num">04</span>Sample output</h2>
             <div className="case-body">
               <p>
                 Three finished chapters, rendered end to end by the pipeline — script, character art, and panel
@@ -247,7 +267,7 @@ export default function Flickrz() {
 
         <section className="case-section">
           <div className="wrap-wide">
-            <h2 className="case-h2"><span className="case-num">04</span>Inside the AI Webtoon admin</h2>
+            <h2 className="case-h2"><span className="case-num">05</span>Inside the AI Webtoon admin</h2>
             <div className="case-body">
               <p>
                 The pipeline isn&apos;t just an API — the team operates it through an internal admin tool: a run view
@@ -258,26 +278,6 @@ export default function Flickrz() {
             </div>
 
             <ShotsGrid shots={SHOTS} />
-          </div>
-        </section>
-
-        <section className="case-section">
-          <div className="wrap">
-            <h2 className="case-h2"><span className="case-num">05</span>Impact</h2>
-            <div className="impact-list">
-              <div className="impact-item">
-                <div className="impact-mark">▸</div>
-                <div className="impact-text">Comic production time dropped from close to a year to a few months per series.</div>
-              </div>
-              <div className="impact-item">
-                <div className="impact-mark">▸</div>
-                <div className="impact-text">The platform secured multiple funding rounds and became a core product in the client&apos;s comic creation workflow.</div>
-              </div>
-              <div className="impact-item">
-                <div className="impact-mark">▸</div>
-                <div className="impact-text">Character identity stays consistent across hundreds of panels per chapter — the hardest part of production-grade generative AI for sequential art.</div>
-              </div>
-            </div>
           </div>
         </section>
       </main>

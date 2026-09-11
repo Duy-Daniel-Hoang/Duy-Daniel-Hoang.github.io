@@ -61,7 +61,23 @@ export default function TryNectar() {
 
         <section className="case-section">
           <div className="wrap">
-            <h2 className="case-h2"><span className="case-num">02</span>Approach</h2>
+            <h2 className="case-h2"><span className="case-num">02</span>Project impact &amp; outcomes</h2>
+            <div className="impact-list">
+              <div className="impact-item">
+                <div className="impact-mark">▸</div>
+                <div className="impact-text">Latency dropped significantly across the multimodal pipeline while character consistency stayed stable.</div>
+              </div>
+              <div className="impact-item">
+                <div className="impact-mark">▸</div>
+                <div className="impact-text">The product is live today and profitable.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="case-section">
+          <div className="wrap">
+            <h2 className="case-h2"><span className="case-num">03</span>Approach</h2>
             <div className="case-body">
               <p>
                 I redesigned the generation pipeline around <strong>ComfyUI</strong> for the image/video side and{" "}
@@ -96,22 +112,6 @@ export default function TryNectar() {
               <span className="tag">Prompt Engineering</span>
               <span className="tag">RunPod</span>
               <span className="tag">System Integration</span>
-            </div>
-          </div>
-        </section>
-
-        <section className="case-section">
-          <div className="wrap">
-            <h2 className="case-h2"><span className="case-num">03</span>Result</h2>
-            <div className="impact-list">
-              <div className="impact-item">
-                <div className="impact-mark">▸</div>
-                <div className="impact-text">Latency dropped significantly across the multimodal pipeline while character consistency stayed stable.</div>
-              </div>
-              <div className="impact-item">
-                <div className="impact-mark">▸</div>
-                <div className="impact-text">The product is live today and profitable.</div>
-              </div>
             </div>
           </div>
         </section>

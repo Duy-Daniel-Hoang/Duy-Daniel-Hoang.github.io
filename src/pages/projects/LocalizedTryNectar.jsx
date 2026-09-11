@@ -20,13 +20,13 @@ export default function LocalizedTryNectar() {
     </div></header>
     <main>
       <section className="case-section"><div className="wrap"><h2 className="case-h2"><span className="case-num">01</span>{c.problemTitle}</h2><div className="case-body">{c.problem.map((p) => <p key={p}>{p}</p>)}</div></div></section>
-      <section className="case-section"><div className="wrap"><h2 className="case-h2"><span className="case-num">02</span>{c.approachTitle}</h2>
+      <section className="case-section"><div className="wrap"><h2 className="case-h2"><span className="case-num">02</span>{c.resultTitle}</h2><div className="impact-list">{c.impacts.map((impact) => <div className="impact-item" key={impact}><div className="impact-mark">▸</div><div className="impact-text">{impact}</div></div>)}</div></div></section>
+      <section className="case-section"><div className="wrap"><h2 className="case-h2"><span className="case-num">03</span>{c.approachTitle}</h2>
         <div className="case-body"><p>{c.approachA}<strong>ComfyUI</strong>{c.approachB}<strong>LangGraph</strong>{c.approachC}</p></div>
         <div className="compare-grid"><div className="compare-card"><h4>{c.latency}</h4><p>{c.latencyDesc}</p></div><div className="compare-card"><h4>{c.consistency}</h4><p>{c.consistencyDesc}</p></div></div>
         <div className="case-body" style={{ marginTop: 24 }}><p>{c.integration}</p></div>
         <div className="stack-row">{["Multimodal AI", "ComfyUI", "LangGraph", "Prompt Engineering", "RunPod", "System Integration"].map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div>
       </div></section>
-      <section className="case-section"><div className="wrap"><h2 className="case-h2"><span className="case-num">03</span>{c.resultTitle}</h2><div className="impact-list">{c.impacts.map((impact) => <div className="impact-item" key={impact}><div className="impact-mark">▸</div><div className="impact-text">{impact}</div></div>)}</div></div></section>
     </main>
     <CaseFoot others={[{ label: "Flickrz", to: "/projects/flickrz" }, { label: "DrawMind", to: "/projects/drawmind" }]} />
   </>;

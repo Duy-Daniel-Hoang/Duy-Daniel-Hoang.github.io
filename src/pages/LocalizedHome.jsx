@@ -4,13 +4,11 @@ import Footer from "../components/Footer.jsx";
 import HeroPipeline from "../components/HeroPipeline.jsx";
 import LanguageSwitcher from "../components/LanguageSwitcher.jsx";
 import Seo from "../components/Seo.jsx";
-import SkillBars from "../components/SkillBars.jsx";
+import SkillMarquees from "../components/SkillMarquees.jsx";
 import { useLocale } from "../i18n/LocaleContext.jsx";
 import { HOME_COPY } from "../i18n/homeCopy.js";
 import { HOME_CJK } from "../i18n/homeCopyCjk.js";
 
-const CORE_SKILLS = [["Computer Vision", 7], ["Evaluation", 5], ["AI Image Generation", 4], ["LLM (Multimodal & Multilingual)", 4], ["Prompt Engineering", 4], ["AI Agent Orchestration", 3]];
-const TOOL_SKILLS = [["ComfyUI", 3], ["FastAPI", 3], ["RunPod / VastAI / AWS", 3], ["LangChain / LangGraph", 2]];
 const NAV_IDS = ["about", "experience", "work", "skills", "contact"];
 const PROJECTS = [
   { name: "Flickrz", to: "/projects/flickrz", theme: "orange", tags: ["Multi-Agent Orchestration", "LangGraph", "LoRA", "ComfyUI", "FastAPI"], logo: "/assets/flickrz/logo-flickrz.svg", logoClass: "flickrz" },
@@ -86,7 +84,7 @@ export default function LocalizedHome() {
 
         <section id="skills"><div className="wrap">
           <div className="section-head"><div className="eyebrow">{copy.skillsLabel}</div><h2>{copy.skillsTitle}</h2><p>{copy.skillsDesc}</p></div>
-          <div className="skill-cols"><div><div className="skill-col-label">{copy.core}</div><SkillBars items={CORE_SKILLS} max={7} /></div><div><div className="skill-col-label">{copy.tools}</div><SkillBars items={TOOL_SKILLS} max={7} /></div></div>
+          <SkillMarquees labels={{ core: copy.core, tools: copy.tools, leadership: copy.leadership }} />
         </div></section>
 
         <section id="education"><div className="wrap"><div className="ed-grid">

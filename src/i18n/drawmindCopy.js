@@ -9,7 +9,7 @@ export const DRAWMIND_COPY = {
     approachTitle: "Cách tiếp cận: xử lý đúng ràng buộc", approach: "Thay vì chỉ tìm thêm dữ liệu hoặc tăng kích thước model, đội ngũ phân tích những lỗi lặp lại, nhóm theo nguyên nhân và xử lý trực tiếp từng nhóm.",
     steps: [["Phân tích nguyên nhân lỗi", "Nhóm lỗi theo độ mơ hồ, thiếu dữ liệu, giới hạn VRAM, domain gap và nhầm class — một Table bị đọc thành Note đồng thời là false negative của Table và false positive của Note."], ["Chiến lược training & phân bổ dữ liệu", "Ưu tiên ngân sách gán nhãn và training cho các nhóm lỗi ảnh hưởng trực tiếp đến mục tiêu false negative gần bằng không."], ["Xử lý ảnh có mục tiêu", "Dùng tiling và crop độ phân giải cao để giữ lại chữ nhỏ, nét mảnh và các tín hiệu phân biệt class sau bước resize."], ["Post-processing", "Tinh chỉnh confidence threshold theo từng class và thêm bước bắt near-miss để tăng recall trong giới hạn dữ liệu và compute."]],
     systemTitle: "Hệ thống trong thực tế", detect: "Tự động detection và segmentation từng vùng View, Note và Table chính xác end-to-end bằng RT-DETR kết hợp chiến lược xử lý ảnh và classification chuyên biệt.", detectCaption: "detection & segmentation tự động trên một bản vẽ thực tế", agent: "AI Agent đọc bản vẽ đủ sâu để trả lời câu hỏi: LLM và VLM được điều phối qua orchestration layer, gọi đúng tool cho từng nhiệm vụ, bao gồm các tool được xây dựng riêng cho workflow này.", agentCaption: "AI Agent đọc hiểu bản vẽ và trả lời câu hỏi chuyên sâu",
-    impactTitle: "Tác động", impacts: ["Công việc detection và segmentation thủ công mất khoảng 30 phút; hệ thống hoàn thành trong chưa đến 15 giây.", "mAP trên 0,95, vượt đáng kể mức khoảng 0,7 thường thấy ở hệ thống detection tổng quát trên loại bản vẽ này.", "Kỹ sư có thể truy xuất thông tin từ bản vẽ bằng hội thoại thay vì phải tìm kiếm thủ công."],
+    impactTitle: "Tác động và kết quả của dự án", impacts: ["Công việc detection và segmentation thủ công mất khoảng 30 phút; hệ thống hoàn thành trong chưa đến 15 giây.", "mAP trên 0,95, vượt đáng kể mức khoảng 0,7 thường thấy ở hệ thống detection tổng quát trên loại bản vẽ này.", "Kỹ sư có thể truy xuất thông tin từ bản vẽ bằng hội thoại thay vì phải tìm kiếm thủ công."],
   },
   ja: {
     seoTitle: "DrawMind — 技術図面を理解するAI Agent | Hoang Tan Duy", seoDescription: "LLM/VLMと高精度な検出・セグメンテーションツールを組み合わせ、複雑な技術図面を深く理解するAI Agentの開発事例です。", kicker: "ケーススタディ · 02 / 03",
@@ -21,7 +21,7 @@ export const DRAWMIND_COPY = {
     approachTitle: "制約に合わせたアプローチ", approach: "単純にデータやモデル規模を増やすのではなく、再発するエラーを原因別に分類し、各グループへ直接対策しました。",
     steps: [["エラー原因分析", "曖昧さ、データ不足、VRAM制約、domain gap、class間誤認を分類。TableをNoteと判定すると両classに同時に影響する点も評価しました。"], ["学習戦略とデータ配分", "false negative最小化に直結するエラーへannotationとtraining予算を優先配分しました。"], ["目的別画像処理", "tilingと高解像度cropにより、resize後も小さな文字と細線、class識別手掛かりを保持しました。"], ["Post-processing", "class別confidence thresholdとnear-miss補正により、限られた資源でrecallを向上しました。"]],
     systemTitle: "実際の動作", detect: "RT-DETRと目的別画像処理・classificationを組み合わせ、図面上のView・Note・Tableをend-to-endで自動検出・セグメンテーションします。", detectCaption: "実図面上で動作する自動検出・セグメンテーション", agent: "LLMとVLMをorchestration layerで制御し、目的に応じて専用ツールを呼び出すことで、図面を深く読み取り質問に回答するAI Agentを構築しました。", agentCaption: "技術図面を詳細に理解し、質問へ回答するAI Agent",
-    impactTitle: "成果", impacts: ["手作業で約30分かかっていた検出・セグメンテーションを15秒未満へ短縮しました。", "同種図面に対する汎用検出システムの約0.7を大きく上回るmAP 0.95超を達成しました。", "図面内を手作業で探す代わりに、エンジニアが対話形式で必要情報を取得できます。"],
+    impactTitle: "プロジェクトの成果とインパクト", impacts: ["手作業で約30分かかっていた検出・セグメンテーションを15秒未満へ短縮しました。", "同種図面に対する汎用検出システムの約0.7を大きく上回るmAP 0.95超を達成しました。", "図面内を手作業で探す代わりに、エンジニアが対話形式で必要情報を取得できます。"],
   },
   ko: {
     seoTitle: "DrawMind — 기술 도면을 이해하는 AI Agent | Hoang Tan Duy", seoDescription: "LLM/VLM과 전문 검출·세그멘테이션 도구를 결합해 복잡한 기술 도면을 깊이 이해하는 AI Agent 개발 사례입니다.", kicker: "프로젝트 사례 · 02 / 03",
@@ -33,6 +33,6 @@ export const DRAWMIND_COPY = {
     approachTitle: "제약을 고려한 접근", approach: "단순히 데이터나 모델 규모를 늘리는 대신 반복 오류를 원인별로 분류하고 각 그룹을 직접 해결했습니다.",
     steps: [["오류 원인 분석", "모호성, 데이터 부족, VRAM 한계, domain gap, class 혼동을 구분하고 하나의 오분류가 두 class에 동시에 미치는 영향까지 평가했습니다."], ["학습 전략 및 데이터 배분", "false negative 최소화에 가장 중요한 오류군에 annotation과 training 예산을 우선 배정했습니다."], ["목적 기반 이미지 처리", "tiling과 고해상도 crop으로 resize 후에도 작은 문자, 가는 선, class 구분 단서를 보존했습니다."], ["Post-processing", "class별 confidence threshold와 near-miss 보정으로 제한된 자원에서 recall을 높였습니다."]],
     systemTitle: "실제 시스템", detect: "RT-DETR과 목적별 이미지 처리·classification 전략을 결합해 도면의 View·Note·Table 영역을 end-to-end로 자동 검출 및 세그멘테이션합니다.", detectCaption: "실제 도면에서 동작하는 자동 검출 및 세그멘테이션", agent: "LLM과 VLM을 orchestration layer로 제어하고 작업에 맞는 전용 도구를 호출해, 도면을 깊이 읽고 질문에 답하는 AI Agent를 구축했습니다.", agentCaption: "도면을 정밀하게 이해하고 질문에 답하는 AI Agent",
-    impactTitle: "성과", impacts: ["수작업으로 약 30분 걸리던 검출·세그멘테이션을 15초 미만으로 단축했습니다.", "유사 도면에서 범용 검출 시스템의 약 0.7을 크게 웃도는 mAP 0.95 이상을 달성했습니다.", "엔지니어가 도면을 직접 뒤지는 대신 대화로 필요한 정보를 얻을 수 있습니다."],
+    impactTitle: "프로젝트 성과 및 영향", impacts: ["수작업으로 약 30분 걸리던 검출·세그멘테이션을 15초 미만으로 단축했습니다.", "유사 도면에서 범용 검출 시스템의 약 0.7을 크게 웃도는 mAP 0.95 이상을 달성했습니다.", "엔지니어가 도면을 직접 뒤지는 대신 대화로 필요한 정보를 얻을 수 있습니다."],
   },
 };

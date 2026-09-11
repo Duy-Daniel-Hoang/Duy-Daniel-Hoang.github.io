@@ -7,7 +7,7 @@ export const TRYNECTAR_COPY = {
     approachTitle: "Approach", approachA: "I redesigned the generation pipeline around ", approachB: " for image and video and ", approachC: " for orchestration, then addressed latency and consistency as separate engineering problems:",
     latency: "Latency", latencyDesc: "Optimized model inference on RunPod and restructured the pipeline so independent modalities run concurrently instead of waiting in sequence.", consistency: "Character consistency", consistencyDesc: "Used dynamic persona injection and context-window management so identity and tone remain stable across long conversations and multiple generated assets.",
     integration: "I also drove integration across model inference, content moderation, storage, and personalization into one platform architecture, while leading and mentoring the AI R&D team on engineering standards.",
-    resultTitle: "Result", impacts: ["Latency dropped significantly across the multimodal pipeline while character consistency remained stable.", "The product is live and profitable."], back: "Back to portfolio", other: "Other case studies",
+    resultTitle: "Project impact & outcomes", impacts: ["Latency dropped significantly across the multimodal pipeline while character consistency remained stable.", "The product is live and profitable."], back: "Back to portfolio", other: "Other case studies",
   },
   vi: {
     seoTitle: "TryNectar — AI Companion đa phương thức | Hoàng Tân Duy", seoDescription: "Sản phẩm AI companion đa phương thức đang vận hành và có lợi nhuận, với kiến trúc duy trì nhất quán nhân vật qua văn bản, hình ảnh và video.", kicker: "CASE STUDY · 03 / 03",
@@ -17,7 +17,7 @@ export const TRYNECTAR_COPY = {
     approachTitle: "Giải pháp", approachA: "Tôi thiết kế lại pipeline sinh nội dung với ", approachB: " cho hình ảnh/video và ", approachC: " để orchestration, sau đó tách bài toán độ trễ và tính nhất quán thành hai hướng tối ưu riêng:",
     latency: "Độ trễ", latencyDesc: "Tối ưu model inference trên RunPod và tái cấu trúc pipeline để các modality độc lập chạy song song thay vì phải chờ tuần tự.", consistency: "Tính nhất quán nhân vật", consistencyDesc: "Áp dụng dynamic persona injection và quản lý context window để danh tính, ngoại hình và giọng điệu ổn định qua hội thoại dài cùng nhiều nội dung được sinh.",
     integration: "Tôi cũng chủ trì tích hợp model inference, kiểm duyệt nội dung, lưu trữ và cá nhân hóa vào một kiến trúc nền tảng thống nhất; đồng thời dẫn dắt, mentoring đội AI R&D về tiêu chuẩn kỹ thuật của codebase.",
-    resultTitle: "Kết quả", impacts: ["Độ trễ của pipeline đa phương thức giảm đáng kể trong khi tính nhất quán nhân vật vẫn được duy trì ổn định.", "Sản phẩm hiện đang vận hành thực tế và có lợi nhuận."], back: "Về portfolio", other: "Case study khác",
+    resultTitle: "Tác động và kết quả của dự án", impacts: ["Độ trễ của pipeline đa phương thức giảm đáng kể trong khi tính nhất quán nhân vật vẫn được duy trì ổn định.", "Sản phẩm hiện đang vận hành thực tế và có lợi nhuận."], back: "Về portfolio", other: "Case study khác",
   },
   ja: {
     seoTitle: "TryNectar — マルチモーダルAIコンパニオン | Hoang Tan Duy", seoDescription: "テキスト・画像・動画を通じてキャラクターの一貫性を維持する、稼働・収益化済みAIコンパニオンの開発事例です。", kicker: "ケーススタディ · 03 / 03",
@@ -27,7 +27,7 @@ export const TRYNECTAR_COPY = {
     approachTitle: "アプローチ", approachA: "画像・動画生成を", approachB: "、オーケストレーションを", approachC: "を中心に再設計し、レイテンシと一貫性を別々の技術課題として最適化しました。",
     latency: "レイテンシ", latencyDesc: "RunPod上の推論を最適化し、依存関係のない処理を直列待機させず並列実行できる構成に変更しました。", consistency: "キャラクターの一貫性", consistencyDesc: "動的persona注入とcontext window管理により、長い対話や複数の生成物でも、人格・外見・口調を安定させました。",
     integration: "モデル推論、コンテンツモデレーション、ストレージ、パーソナライズを一つのプラットフォームへ統合し、AI R&Dチームの技術基準策定とメンタリングも担当しました。",
-    resultTitle: "成果", impacts: ["キャラクターの一貫性を維持しながら、マルチモーダルパイプライン全体のレイテンシを大幅に短縮しました。", "現在もサービスとして稼働し、収益を生み出しています。"], back: "ポートフォリオへ", other: "その他の事例",
+    resultTitle: "プロジェクトの成果とインパクト", impacts: ["キャラクターの一貫性を維持しながら、マルチモーダルパイプライン全体のレイテンシを大幅に短縮しました。", "現在もサービスとして稼働し、収益を生み出しています。"], back: "ポートフォリオへ", other: "その他の事例",
   },
   ko: {
     seoTitle: "TryNectar — 멀티모달 AI Companion | Hoang Tan Duy", seoDescription: "텍스트·이미지·영상 전반에서 캐릭터 일관성을 유지하는, 실제 운영 및 수익화 중인 AI companion 개발 사례입니다.", kicker: "프로젝트 사례 · 03 / 03",
@@ -37,6 +37,6 @@ export const TRYNECTAR_COPY = {
     approachTitle: "접근 방식", approachA: "이미지·영상 생성은 ", approachB: "를, orchestration은 ", approachC: "를 중심으로 pipeline을 재설계하고 지연 시간과 일관성을 별도 문제로 나누어 최적화했습니다.",
     latency: "지연 시간", latencyDesc: "RunPod 모델 추론을 최적화하고 서로 의존하지 않는 modality가 순차 대기 없이 병렬 실행되도록 pipeline을 재구성했습니다.", consistency: "캐릭터 일관성", consistencyDesc: "동적 persona 주입과 context window 관리로 긴 대화와 여러 생성 결과에서도 정체성, 외형, 말투를 안정적으로 유지했습니다.",
     integration: "모델 추론, 콘텐츠 모더레이션, 스토리지, 개인화를 하나의 플랫폼 아키텍처로 통합했으며 AI R&D 팀의 엔지니어링 기준 수립과 멘토링도 주도했습니다.",
-    resultTitle: "성과", impacts: ["캐릭터 일관성을 안정적으로 유지하면서 멀티모달 pipeline 전반의 지연 시간을 크게 단축했습니다.", "현재 실제 서비스로 운영되며 수익을 창출하고 있습니다."], back: "포트폴리오로", other: "다른 프로젝트 사례",
+    resultTitle: "프로젝트 성과 및 영향", impacts: ["캐릭터 일관성을 안정적으로 유지하면서 멀티모달 pipeline 전반의 지연 시간을 크게 단축했습니다.", "현재 실제 서비스로 운영되며 수익을 창출하고 있습니다."], back: "포트폴리오로", other: "다른 프로젝트 사례",
   },
 };

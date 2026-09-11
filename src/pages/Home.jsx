@@ -1,24 +1,10 @@
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer.jsx";
-import SkillBars from "../components/SkillBars.jsx";
+import SkillMarquees from "../components/SkillMarquees.jsx";
 import Seo from "../components/Seo.jsx";
 import HeroPipeline from "../components/HeroPipeline.jsx";
 import LanguageSwitcher from "../components/LanguageSwitcher.jsx";
 
-const CORE_SKILLS = [
-  ["Computer Vision", 7],
-  ["Evaluation", 5],
-  ["AI Image Generation", 4],
-  ["LLM (Multimodal & Multilingual)", 4],
-  ["Prompt Engineering", 4],
-  ["AI Agent Orchestration", 3],
-];
-const TOOLS_SKILLS = [
-  ["ComfyUI", 3],
-  ["FastAPI", 3],
-  ["RunPod / VastAI / AWS", 3],
-  ["LangChain / LangGraph", 2],
-];
 
 export default function Home() {
   return (
@@ -313,20 +299,10 @@ export default function Home() {
           <div className="wrap">
             <div className="section-head">
               <div className="eyebrow">04 · Skills</div>
-              <h2>Where the years went</h2>
-              <p>Years of hands-on experience per area, out of 7 — the length of my AI/ML career so far.</p>
+              <h2>Capabilities I bring to the team</h2>
+              <p>A focused mix of applied AI expertise, production tooling, and hands-on technical leadership.</p>
             </div>
-
-            <div className="skill-cols">
-              <div>
-                <div className="skill-col-label">Core AI / ML</div>
-                <SkillBars items={CORE_SKILLS} max={7} />
-              </div>
-              <div>
-                <div className="skill-col-label">Tools &amp; Infra</div>
-                <SkillBars items={TOOLS_SKILLS} max={7} />
-              </div>
-            </div>
+            <SkillMarquees labels={{ core: "Core AI / ML", tools: "Tools & Infra", leadership: "Team Leadership" }} />
           </div>
         </section>
 

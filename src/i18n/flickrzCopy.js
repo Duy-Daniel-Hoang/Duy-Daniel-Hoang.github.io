@@ -11,7 +11,7 @@ export const FLICKRZ_COPY = {
     sampleTitle: "Đầu ra mẫu", sample: "Ba chương hoàn thiện được tạo end-to-end bởi pipeline: kịch bản, tạo hình nhân vật và từng panel đều do hệ thống xử lý.", allAges: "Mọi lứa tuổi", mature: "Nội dung trưởng thành",
     adminTitle: "Bên trong AI Webtoon Admin", admin: "Đây không chỉ là một API. Đội vận hành sử dụng admin tool với màn hình theo dõi pipeline và giao diện riêng cho từng agent tại các bước cần con người đánh giá: review kịch bản, tạo và QA sketch, train LoRA, kiểm tra panel.",
     shots: [["Pipeline", "Theo dõi trực tiếp hai luồng kịch bản/nhân vật, các điểm hợp nhất và vòng lặp sửa."], ["User Brief", "Điểm bắt đầu của chương: thể loại, tình tiết và nhân vật."], ["Script Writer Agent", "Một agent tạo bốn đầu ra: truyện, hội thoại, prompt sketch và prompt scene."], ["Script Reviewer Agent", "Chấm rubric và trả bản chưa đạt về writer."], ["LoRA Creation", "Sinh sketch tham chiếu và train LoRA nhân vật."], ["Image Reviewer Agent", "Tự động pass/flag sketch trước human review."], ["Human Reviewer Team", "Hard gate duyệt đồng thời kịch bản và sketch."], ["Scene Generation", "Render panel từ LoRA, scene prompt và hội thoại."], ["Quality Supervisor Agent", "Kiểm tra từng panel và phát hiện drift."], ["Output", "Chương hoàn chỉnh sẵn sàng xuất bản."]],
-    impactTitle: "Tác động", impacts: ["Thời gian sản xuất một bộ truyện giảm từ gần một năm xuống còn vài tháng.", "Nền tảng nhận được nhiều vòng đầu tư và trở thành sản phẩm cốt lõi trong quy trình sản xuất truyện của khách hàng.", "Danh tính nhân vật được giữ nhất quán qua hàng trăm panel mỗi chương — bài toán khó nhất của Generative AI cho nghệ thuật tuần tự."], stack: technicalStack,
+    impactTitle: "Tác động và kết quả của dự án", impacts: ["Thời gian sản xuất một bộ truyện giảm từ gần một năm xuống còn vài tháng.", "Nền tảng nhận được nhiều vòng đầu tư và trở thành sản phẩm cốt lõi trong quy trình sản xuất truyện của khách hàng.", "Danh tính nhân vật được giữ nhất quán qua hàng trăm panel mỗi chương — bài toán khó nhất của Generative AI cho nghệ thuật tuần tự."], stack: technicalStack,
   },
   ja: {
     seoTitle: "Flickrz — AI Webtoonパイプライン | Hoang Tan Duy", seoDescription: "6,000万人以上の読者を持つプラットフォーム向けに、脚本・作画・品質管理を自動化するマルチエージェントAIの開発事例です。", kicker: "ケーススタディ · 01 / 03",
@@ -23,7 +23,7 @@ export const FLICKRZ_COPY = {
     sampleTitle: "生成サンプル", sample: "脚本、キャラクター作画、panel生成まで、パイプラインがend-to-endで制作した3つの完成章です。", allAges: "全年齢", mature: "成人向けコンテンツ",
     adminTitle: "AI Webtoon Admin", admin: "単なるAPIではなく、pipeline全体の実行状況と各Agent専用画面を備えた運用ツールです。脚本review、sketch生成・QA、LoRA学習、panel確認など、人の判断が必要な工程を一つの画面群で管理します。",
     shots: [["Pipeline", "脚本・キャラクター工程、合流点、修正ループをリアルタイム表示。"], ["User Brief", "ジャンル、展開、登場人物を入力。"], ["Script Writer Agent", "物語、会話、sketch prompt、scene promptを生成。"], ["Script Reviewer Agent", "rubric評価とwriterへの差し戻し。"], ["LoRA Creation", "参照sketch生成とLoRA学習。"], ["Image Reviewer Agent", "human review前の自動判定。"], ["Human Reviewer Team", "脚本とsketchを同時承認するhard gate。"], ["Scene Generation", "LoRA、prompt、会話からpanelをrender。"], ["Quality Supervisor Agent", "panel単位の品質・drift検査。"], ["Output", "公開可能な完成章。"]],
-    impactTitle: "成果", impacts: ["1シリーズ約1年だった制作期間を数か月へ短縮しました。", "複数回の資金調達につながり、クライアントの制作工程における中核プロダクトとなりました。", "一章数百panelでもキャラクターidentityを維持し、連続作品におけるGenerative AI最大の課題を解決しました。"], stack: technicalStack,
+    impactTitle: "プロジェクトの成果とインパクト", impacts: ["1シリーズ約1年だった制作期間を数か月へ短縮しました。", "複数回の資金調達につながり、クライアントの制作工程における中核プロダクトとなりました。", "一章数百panelでもキャラクターidentityを維持し、連続作品におけるGenerative AI最大の課題を解決しました。"], stack: technicalStack,
   },
   ko: {
     seoTitle: "Flickrz — AI Webtoon Pipeline | Hoang Tan Duy", seoDescription: "6천만 명 이상의 독자를 보유한 플랫폼에서 각본·작화·품질 검수를 수행하는 멀티 에이전트 AI 개발 사례입니다.", kicker: "프로젝트 사례 · 01 / 03",
@@ -35,6 +35,6 @@ export const FLICKRZ_COPY = {
     sampleTitle: "결과 샘플", sample: "각본, 캐릭터 아트, panel 생성까지 pipeline이 end-to-end로 제작한 세 개의 완성 챕터입니다.", allAges: "전체 이용가", mature: "성인 콘텐츠",
     adminTitle: "AI Webtoon Admin 내부", admin: "단순 API가 아니라 pipeline 실행 현황과 Agent별 전용 화면을 갖춘 내부 운영 도구입니다. 각본 review, sketch 생성·QA, LoRA 학습, panel 검수 등 사람의 판단이 필요한 단계를 한 곳에서 운영합니다.",
     shots: [["Pipeline", "각본·캐릭터 흐름, 합류 지점, 수정 loop 실시간 확인."], ["User Brief", "장르, 전개, 캐릭터 입력."], ["Script Writer Agent", "스토리, 대사, sketch prompt, scene prompt 생성."], ["Script Reviewer Agent", "rubric 평가 및 writer 반환."], ["LoRA Creation", "참조 sketch 생성과 LoRA 학습."], ["Image Reviewer Agent", "human review 전 자동 판정."], ["Human Reviewer Team", "각본과 sketch 동시 승인 hard gate."], ["Scene Generation", "LoRA, prompt, 대사로 panel render."], ["Quality Supervisor Agent", "panel별 품질과 drift 확인."], ["Output", "게시 가능한 완성 챕터."]],
-    impactTitle: "성과", impacts: ["시리즈당 약 1년이던 제작 기간을 수개월로 단축했습니다.", "여러 차례 투자 유치에 기여했으며 고객사의 콘텐츠 제작 workflow 핵심 제품이 되었습니다.", "한 챕터의 수백 panel에서도 캐릭터 identity를 유지해 연속 콘텐츠 Generative AI의 가장 어려운 문제를 해결했습니다."], stack: technicalStack,
+    impactTitle: "프로젝트 성과 및 영향", impacts: ["시리즈당 약 1년이던 제작 기간을 수개월로 단축했습니다.", "여러 차례 투자 유치에 기여했으며 고객사의 콘텐츠 제작 workflow 핵심 제품이 되었습니다.", "한 챕터의 수백 panel에서도 캐릭터 identity를 유지해 연속 콘텐츠 Generative AI의 가장 어려운 문제를 해결했습니다."], stack: technicalStack,
   },
 };

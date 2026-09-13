@@ -5,28 +5,30 @@ const MIN_SCALE = 0.86;
 
 function fallbackActive() {
   return (
-    window.matchMedia("(max-height: 700px)").matches ||
+    window.matchMedia("(max-height: 480px)").matches ||
     window.matchMedia("(prefers-reduced-motion: reduce)").matches
   );
 }
 
-// .stack-head is itself sticky at `top: 58px` (pinned below the nav), while the
+// .proj-tabs is itself sticky at `top: 58px` (pinned below the nav), while the
 // cards' own `top` is measured from the real viewport edge — so the point the
-// cards must stick at is the head's own sticky offset PLUS its rendered height,
-// not just its height. Missing the offset made cards settle ~58px too high,
-// overlapping into the tab bar instead of sitting flush beneath it.
-function headStickTop(head) {
-  return (parseFloat(getComputedStyle(head).top) || 0) + head.offsetHeight;
+// cards must stick at is the tabs' own sticky offset PLUS its rendered height
+// and margin, not just its height. Missing the offset made cards settle too
+// high, overlapping into the tab bar instead of sitting flush beneath it.
+function tabsStickBottom(tabs) {
+  const top = parseFloat(getComputedStyle(tabs).top) || 0;
+  const marginBottom = parseFloat(getComputedStyle(tabs).marginBottom) || 0;
+  return top + tabs.offsetHeight + marginBottom;
 }
 
 export function scrollToStackCard(index = 0) {
   const stage = document.querySelector(".project-stack-stage");
-  const head = stage?.querySelector(".stack-head");
+  const tabs = stage?.querySelector(".proj-tabs");
   const grid = stage?.querySelector(".proj-grid");
   const cards = stage?.querySelectorAll(".proj-grid > .proj-card-link, .proj-grid > .proj-card");
   const card = cards?.[index];
-  if (!card || !head || !grid) return false;
-  const stackTop = headStickTop(head);
+  if (!card || !tabs || !grid) return false;
+  const stackTop = tabsStickBottom(tabs);
   let cumulative = 0;
   for (let j = 0; j < index; j += 1) {
     cumulative += cards[j].offsetHeight + (parseFloat(getComputedStyle(cards[j]).marginBottom) || 0);
@@ -43,13 +45,13 @@ export default function ProjectStackTabs({ stageRef, names }) {
   useEffect(() => {
     const stage = stageRef.current;
     if (!stage) return undefined;
-    const head = stage.querySelector(".stack-head");
+    const tabs = stage.querySelector(".proj-tabs");
     const grid = stage.querySelector(".proj-grid");
     const cards = Array.from(stage.querySelectorAll(".proj-grid > .proj-card-link, .proj-grid > .proj-card"));
-    if (!head || !grid || !cards.length) return undefined;
+    if (!tabs || !grid || !cards.length) return undefined;
 
     const syncStackTop = () => {
-      grid.style.setProperty("--stack-top", `${headStickTop(head)}px`);
+      grid.style.setProperty("--stack-top", `${tabsStickBottom(tabs)}px`);
     };
 
     let ticking = false;
@@ -59,7 +61,7 @@ export default function ProjectStackTabs({ stageRef, names }) {
         cards.forEach((card) => { card.style.transform = ""; });
         return;
       }
-      const stackTop = headStickTop(head);
+      const stackTop = tabsStickBottom(tabs);
       const peek = parseFloat(getComputedStyle(grid).getPropertyValue("--stack-peek")) || 0;
       const gridDocTop = grid.getBoundingClientRect().top + window.scrollY;
 
@@ -89,7 +91,7 @@ export default function ProjectStackTabs({ stageRef, names }) {
       syncStackTop();
       update();
     });
-    ro.observe(head);
+    ro.observe(tabs);
     window.addEventListener("scroll", onFrame, { passive: true });
     window.addEventListener("resize", onFrame);
     return () => {

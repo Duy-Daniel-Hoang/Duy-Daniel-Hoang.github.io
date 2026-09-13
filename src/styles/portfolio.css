@@ -211,26 +211,24 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
 @media (max-width:600px){ .tl-item{ grid-template-columns:1fr; gap:6px; } }
 
 /* ---------- projects grid (home) ---------- */
-/* Sticky "card stack": the head (title + tab bar) pins just below the nav
-   while the stage scrolls, and each card is itself sticky right below the
-   head — later cards (higher z-index) slide up and settle on top of earlier
-   ones as you scroll, until the stage's own height runs out and the whole
-   section finally scrolls away normally. ProjectStackTabs measures the
-   rendered head height on mount/resize and writes it into --stack-top, so
-   the cards always start flush under the head regardless of how the intro
-   copy wraps at a given width. */
-.project-stack-stage > .stack-head{
-  position:sticky; top:58px; z-index:8;
-  padding:18px 0 20px;
-  background:linear-gradient(to bottom, var(--bg) 82%, transparent);
-}
-.project-stack-stage > .stack-head > .section-head{ margin-bottom:16px; }
+/* Sticky "card stack": only the tab bar itself pins just below the nav while
+   the stage scrolls — the intro copy above it scrolls away normally, so the
+   pinned strip stays compact (one row) instead of eating a big chunk of the
+   viewport for the whole scroll. Each card is sticky right below the tabs —
+   later cards (higher z-index) slide up and settle on top of earlier ones as
+   you scroll, until the stage's own height runs out and the whole section
+   finally scrolls away normally. ProjectStackTabs measures the tab bar's
+   rendered height on mount/resize and writes it into --stack-top, so cards
+   always start flush under it regardless of viewport width. */
+.project-stack-stage > .section-head{ margin-bottom:16px; }
 .proj-tabs{
+  position:sticky; top:70px; z-index:8;
   display:flex;
   border:1px solid var(--border); border-radius:999px;
   background:transparent; overflow:hidden;
   box-shadow:0 14px 34px -22px #000;
   transition:background-color 0.3s ease;
+  margin-bottom:20px;
 }
 /* Transparent lets each card show through as it slides up underneath — once
    Bloom (the last card) is the one settled in place, every project has
@@ -263,7 +261,7 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
 .proj-grid > .proj-card-link,
 .proj-grid > .proj-card{
   position:sticky; top:var(--stack-top);
-  min-height:330px; margin-bottom:12px;
+  min-height:465px; margin-bottom:12px;
   border-radius:14px; overflow:hidden; isolation:isolate;
   transform:translateY(calc(var(--stack-peek) * var(--i, 0)));
   transform-origin:center top;
@@ -280,19 +278,17 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
 .proj-grid > :nth-child(2){ --stack-accent:#34d399; z-index:2; }
 .proj-grid > :nth-child(3){ --stack-accent:#ff5a36; z-index:3; }
 .proj-grid > :nth-child(4){ --stack-accent:#4f8cff; z-index:4; margin-bottom:0; }
-@media (max-width:760px){
-  .project-stack-stage > .stack-head{ padding:14px 0 18px; }
-  .proj-grid{ --stack-peek:16px; }
-  .proj-grid > .proj-card-link, .proj-grid > .proj-card{ min-height:390px; margin-bottom:10px; }
-  .proj-grid > :nth-child(4){ margin-bottom:0; }
-}
-@media (max-height:700px), (prefers-reduced-motion:reduce){
-  .project-stack-stage > .stack-head{ position:relative; top:auto; padding:0; background:none; }
+/* Only bail out to a static grid for genuinely cramped viewports (e.g. phones
+   in landscape) now that the pinned strip is just the compact tab bar —
+   mobile browsers routinely report a viewport under 700px tall simply
+   because their address bar/toolbar chrome hasn't collapsed yet, which used
+   to falsely trigger this fallback and hide the tab bar on ordinary phones. */
+@media (max-height:480px), (prefers-reduced-motion:reduce){
   .proj-tabs{ display:none; }
   .proj-grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; padding-bottom:0; }
   .proj-grid > .proj-card-link, .proj-grid > .proj-card{ position:relative; top:auto; min-height:0; margin-bottom:0; border-radius:0; box-shadow:none; transform:none; }
 }
-@media ((max-height:700px) or (prefers-reduced-motion:reduce)) and (max-width:760px){
+@media (max-width:760px){
   .proj-grid{ grid-template-columns:1fr; }
 }
 .proj-card{ display:flex; flex-direction:column; height:100%; padding:26px; background-color:var(--surface); background-repeat:no-repeat; }

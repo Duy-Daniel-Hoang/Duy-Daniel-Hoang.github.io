@@ -85,10 +85,8 @@ export default function LocalizedHome() {
 
         <section id="work"><div className="wrap-wide">
           <div className="project-stack-stage" ref={stageRef}>
-          <div className="stack-head">
           <div className="section-head"><div className="eyebrow">{copy.workLabel}</div><h2>{copy.workTitle}</h2><p>{copy.workIntro}</p></div>
           <ProjectStackTabs stageRef={stageRef} names={PROJECT_NAMES} />
-          </div>
           <div className="proj-grid">{PROJECTS.map((project, index) => <ProjectCard project={project} copy={copy.projects[index]} role={copy.projectRoles[index]} index={index} key={project.name} />)}</div>
           </div>
           <div className="secondary-list">{copy.secondary.map(([title, desc]) => <div className="sec-item" key={title}><div className="sec-title">{title}</div><div className="sec-desc">{desc}</div></div>)}</div>

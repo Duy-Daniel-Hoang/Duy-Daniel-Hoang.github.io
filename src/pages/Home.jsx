@@ -149,7 +149,6 @@ export default function Home() {
         <section id="work">
           <div className="wrap-wide">
             <div className="project-stack-stage" ref={stageRef}>
-            <div className="stack-head">
             <div className="section-head">
               <div className="eyebrow">03 · Selected Work</div>
               <h2>Featured projects</h2>
@@ -160,7 +159,6 @@ export default function Home() {
               </p>
             </div>
             <ProjectStackTabs stageRef={stageRef} names={PROJECT_NAMES} />
-            </div>
 
             <div className="proj-grid">
               <Link className="proj-card-link" to="/projects/flickrz" style={{ "--i": 0 }}>

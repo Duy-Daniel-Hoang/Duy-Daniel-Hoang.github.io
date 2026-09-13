@@ -195,14 +195,12 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
 }
 /* ---------- corner-bracket cards ---------- */
 .bracket{ position:relative; padding:26px; }
-.bracket::before, .bracket::after, .bracket .bk-tr, .bracket .bk-bl{
+.bracket::before, .bracket .bk-tr{
   content:""; position:absolute; width:14px; height:14px;
   border-color:var(--border); transition:border-color .2s ease, width .2s ease, height .2s ease;
 }
 .bracket::before{ top:0; left:0; border-top:2px solid var(--border); border-left:2px solid var(--border); }
-.bracket::after{ bottom:0; right:0; border-bottom:2px solid var(--border); border-right:2px solid var(--border); }
 .bracket .bk-tr{ top:0; right:0; border-top:2px solid var(--border); border-right:2px solid var(--border); }
-.bracket .bk-bl{ bottom:0; left:0; border-bottom:2px solid var(--border); border-left:2px solid var(--border); }
 
 /* ---------- about ---------- */
 .about-body{ font-size:17px; color:#ccd0dc; max-width:66ch; }

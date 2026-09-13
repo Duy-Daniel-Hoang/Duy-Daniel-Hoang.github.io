@@ -229,11 +229,9 @@ export default function Flickrz() {
                 <video
                   src="/assets/flickrz/vid3.mp4"
                   poster="/assets/flickrz/vid3-poster.webp"
+                  controls
                   playsInline
                   preload="metadata"
-                  tabIndex={-1}
-                  disablePictureInPicture
-                  onContextMenu={(e) => e.preventDefault()}
                 />
               </div>
             </div>

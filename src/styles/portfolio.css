@@ -19,7 +19,13 @@
 html{scroll-behavior:smooth;}
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;} }
 
-html, body{ overflow-x:hidden; max-width:100%; }
+/* overflow-x:hidden here would force overflow-y to compute as auto (per the
+   CSS overflow spec's "non-visible on one axis" coupling rule), which turns
+   html/body into their own scroll container and silently breaks every
+   position:sticky element on the page. overflow-x:clip clips the same
+   horizontal overflow without creating a scroll container, so vertical
+   stickiness keeps working. */
+html, body{ overflow-x:clip; max-width:100%; }
 body{ margin:0; background:var(--bg); }
 html[lang="ja"] .portfolio-root{ font-family:"Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif; }
 html[lang="ko"] .portfolio-root{ font-family:"Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif; }
@@ -197,7 +203,6 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
 .bracket::after{ bottom:0; right:0; border-bottom:2px solid var(--border); border-right:2px solid var(--border); }
 .bracket .bk-tr{ top:0; right:0; border-top:2px solid var(--border); border-right:2px solid var(--border); }
 .bracket .bk-bl{ bottom:0; left:0; border-bottom:2px solid var(--border); border-left:2px solid var(--border); }
-.bracket:hover::before, .bracket:hover::after, .bracket:hover .bk-tr, .bracket:hover .bk-bl{ border-color:var(--accent); width:18px; height:18px; }
 
 /* ---------- about ---------- */
 .about-body{ font-size:17px; color:#ccd0dc; max-width:66ch; }
@@ -216,8 +221,90 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
 @media (max-width:600px){ .tl-item{ grid-template-columns:1fr; gap:6px; } }
 
 /* ---------- projects grid (home) ---------- */
-.proj-grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
-@media (max-width:760px){ .proj-grid{ grid-template-columns:1fr; } }
+/* Sticky "card stack": the head (title + tab bar) pins just below the nav
+   while the stage scrolls, and each card is itself sticky right below the
+   head — later cards (higher z-index) slide up and settle on top of earlier
+   ones as you scroll, until the stage's own height runs out and the whole
+   section finally scrolls away normally. ProjectStackTabs measures the
+   rendered head height on mount/resize and writes it into --stack-top, so
+   the cards always start flush under the head regardless of how the intro
+   copy wraps at a given width. */
+.project-stack-stage > .stack-head{
+  position:sticky; top:58px; z-index:8;
+  padding:18px 0 20px;
+  background:linear-gradient(to bottom, var(--bg) 82%, transparent);
+}
+.project-stack-stage > .stack-head > .section-head{ margin-bottom:16px; }
+.proj-tabs{
+  display:flex;
+  border:1px solid var(--border); border-radius:999px;
+  background:transparent; overflow:hidden;
+  box-shadow:0 14px 34px -22px #000;
+  transition:background-color 0.3s ease;
+}
+/* Transparent lets each card show through as it slides up underneath — once
+   Bloom (the last card) is the one settled in place, every project has
+   already been scrolled through, so there's nothing left to reveal beneath
+   the bar; switch back to a solid backing instead of showing Bloom forever. */
+.proj-tabs.is-final{ background:var(--surface); }
+.proj-tab{
+  position:relative; isolation:isolate;
+  flex:1; padding:14px 16px;
+  font:inherit; font-weight:600; font-size:14.5px; letter-spacing:0.01em;
+  color:var(--ink-dim); background:transparent; border:none; border-right:1px solid var(--border);
+  cursor:pointer; transition:color 0.25s ease;
+}
+.proj-tab:last-child{ border-right:none; }
+.proj-tab:hover{ color:var(--ink); }
+.proj-tab::before{
+  content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+  background:radial-gradient(ellipse 85% 100% at 50% 125%, color-mix(in srgb, var(--accent) 65%, transparent) 0%, transparent 70%);
+  opacity:0; transition:opacity 0.35s ease;
+}
+.proj-tab.is-active{ color:var(--ink); }
+.proj-tab.is-active::before{ opacity:1; }
+@media (max-width:600px){ .proj-tab{ padding:12px 8px; font-size:12.5px; } }
+.proj-grid{
+  --stack-top:230px;
+  --stack-peek:22px;
+  display:flex; flex-direction:column; gap:0;
+  padding-bottom:clamp(40px,8vh,88px);
+}
+.proj-grid > .proj-card-link,
+.proj-grid > .proj-card{
+  position:sticky; top:var(--stack-top);
+  min-height:330px; margin-bottom:12px;
+  border-radius:14px; overflow:hidden; isolation:isolate;
+  transform:translateY(calc(var(--stack-peek) * var(--i, 0)));
+  transform-origin:center top;
+  border:1px solid color-mix(in srgb, var(--stack-accent) 32%, var(--border));
+  box-shadow:0 26px 60px -28px #000, 0 8px 24px -18px color-mix(in srgb, var(--stack-accent) 42%, transparent);
+}
+.proj-grid > .proj-card-link > .proj-card{ min-height:inherit; }
+/* All cards share the same sticky top; ProjectStackTabs fans them out with a
+   small per-index translateY (--stack-peek) and, once a card has been fully
+   passed, progressively scales it down as scrolling continues past it — so
+   the deeper a layer sits in the stack, the smaller its exposed sliver
+   becomes, rather than a flush, static cover. */
+.proj-grid > :nth-child(1){ --stack-accent:#ff8a3d; z-index:1; }
+.proj-grid > :nth-child(2){ --stack-accent:#34d399; z-index:2; }
+.proj-grid > :nth-child(3){ --stack-accent:#ff5a36; z-index:3; }
+.proj-grid > :nth-child(4){ --stack-accent:#4f8cff; z-index:4; margin-bottom:0; }
+@media (max-width:760px){
+  .project-stack-stage > .stack-head{ padding:14px 0 18px; }
+  .proj-grid{ --stack-peek:16px; }
+  .proj-grid > .proj-card-link, .proj-grid > .proj-card{ min-height:390px; margin-bottom:10px; }
+  .proj-grid > :nth-child(4){ margin-bottom:0; }
+}
+@media (max-height:700px), (prefers-reduced-motion:reduce){
+  .project-stack-stage > .stack-head{ position:relative; top:auto; padding:0; background:none; }
+  .proj-tabs{ display:none; }
+  .proj-grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; padding-bottom:0; }
+  .proj-grid > .proj-card-link, .proj-grid > .proj-card{ position:relative; top:auto; min-height:0; margin-bottom:0; border-radius:0; box-shadow:none; transform:none; }
+}
+@media ((max-height:700px) or (prefers-reduced-motion:reduce)) and (max-width:760px){
+  .proj-grid{ grid-template-columns:1fr; }
+}
 .proj-card{ display:flex; flex-direction:column; height:100%; background-color:var(--surface); background-repeat:no-repeat; }
 .proj-card--orange{
   background-image:

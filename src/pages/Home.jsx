@@ -1,12 +1,20 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer.jsx";
 import SkillMarquees from "../components/SkillMarquees.jsx";
 import Seo from "../components/Seo.jsx";
 import HeroPipeline from "../components/HeroPipeline.jsx";
 import LanguageSwitcher from "../components/LanguageSwitcher.jsx";
+import ProjectStackTabs, { scrollToStackCard } from "../components/ProjectStackTabs.jsx";
 
+const PROJECT_NAMES = ["Flickrz", "DrawMind", "TryNectar", "Bloom"];
 
 export default function Home() {
+  const stageRef = useRef(null);
+  const handleWorkLinkClick = (e) => {
+    e.preventDefault();
+    if (!scrollToStackCard(0)) document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <>
       <Seo
@@ -21,7 +29,7 @@ export default function Home() {
           <ul className="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#work">Work</a></li>
+            <li><a href="#work" onClick={handleWorkLinkClick}>Work</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -51,7 +59,7 @@ export default function Home() {
                 <a className="btn linkedin" href="https://www.linkedin.com/in/duydaniel" target="_blank" rel="noopener noreferrer">
                   LinkedIn ↗
                 </a>
-                <a className="btn" href="#work">See the work</a>
+                <a className="btn" href="#work" onClick={handleWorkLinkClick}>See the work</a>
                 <a className="btn" href="#contact">Contact</a>
               </div>
             </div>
@@ -140,6 +148,8 @@ export default function Home() {
 
         <section id="work">
           <div className="wrap-wide">
+            <div className="project-stack-stage" ref={stageRef}>
+            <div className="stack-head">
             <div className="section-head">
               <div className="eyebrow">03 · Selected Work</div>
               <h2>Featured projects</h2>
@@ -149,9 +159,11 @@ export default function Home() {
                 into a full case study.
               </p>
             </div>
+            <ProjectStackTabs stageRef={stageRef} names={PROJECT_NAMES} />
+            </div>
 
             <div className="proj-grid">
-              <Link className="proj-card-link" to="/projects/flickrz">
+              <Link className="proj-card-link" to="/projects/flickrz" style={{ "--i": 0 }}>
                 <article className="proj-card bracket proj-card--orange">
                   <div className="bk-tr" />
                   <div className="bk-bl" />
@@ -185,7 +197,7 @@ export default function Home() {
                 </article>
               </Link>
 
-              <Link className="proj-card-link" to="/projects/drawmind">
+              <Link className="proj-card-link" to="/projects/drawmind" style={{ "--i": 1 }}>
                 <article className="proj-card bracket proj-card--green">
                   <div className="bk-tr" />
                   <div className="bk-bl" />
@@ -218,30 +230,7 @@ export default function Home() {
                 </article>
               </Link>
 
-              <article className="proj-card bracket proj-card--blue">
-                <div className="bk-tr" />
-                <div className="bk-bl" />
-                <div className="proj-top">
-                  <div className="proj-title">Bloom</div>
-                  <div className="proj-role">AI ENGINEER</div>
-                </div>
-                <p className="proj-desc">
-                  Production multi-agent LLM system for biological agriculture, giving farmers data-driven treatment
-                  recommendations. LangGraph state machines route crop-lifecycle and environmental data through a RAG
-                  pipeline built and validated with agronomists.
-                </p>
-                <div className="proj-tags">
-                  <span className="tag">LangGraph</span>
-                  <span className="tag">RAG</span>
-                  <span className="tag">Multi-Agent</span>
-                  <span className="tag">FastAPI</span>
-                </div>
-                <div className="case-link">
-                  View case study <span className="arrow">→</span>
-                </div>
-              </article>
-
-              <Link className="proj-card-link" to="/projects/trynectar">
+              <Link className="proj-card-link" to="/projects/trynectar" style={{ "--i": 2 }}>
                 <article className="proj-card bracket proj-card--redorange">
                   <div className="bk-tr" />
                   <div className="bk-bl" />
@@ -265,6 +254,30 @@ export default function Home() {
                   </div>
                 </article>
               </Link>
+
+              <article className="proj-card bracket proj-card--blue" style={{ "--i": 3 }}>
+                <div className="bk-tr" />
+                <div className="bk-bl" />
+                <div className="proj-top">
+                  <div className="proj-title">Bloom</div>
+                  <div className="proj-role">AI ENGINEER</div>
+                </div>
+                <p className="proj-desc">
+                  Production multi-agent LLM system for biological agriculture, giving farmers data-driven treatment
+                  recommendations. LangGraph state machines route crop-lifecycle and environmental data through a RAG
+                  pipeline built and validated with agronomists.
+                </p>
+                <div className="proj-tags">
+                  <span className="tag">LangGraph</span>
+                  <span className="tag">RAG</span>
+                  <span className="tag">Multi-Agent</span>
+                  <span className="tag">FastAPI</span>
+                </div>
+                <div className="case-link">
+                  View case study <span className="arrow">→</span>
+                </div>
+              </article>
+            </div>
             </div>
 
             <div className="secondary-list">

@@ -1,8 +1,10 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import EnglishHome from "./Home.jsx";
 import Footer from "../components/Footer.jsx";
 import HeroPipeline from "../components/HeroPipeline.jsx";
 import LanguageSwitcher from "../components/LanguageSwitcher.jsx";
+import ProjectStackTabs, { scrollToStackCard } from "../components/ProjectStackTabs.jsx";
 import Seo from "../components/Seo.jsx";
 import SkillMarquees from "../components/SkillMarquees.jsx";
 import { useLocale } from "../i18n/LocaleContext.jsx";
@@ -10,16 +12,17 @@ import { HOME_COPY } from "../i18n/homeCopy.js";
 import { HOME_CJK } from "../i18n/homeCopyCjk.js";
 
 const NAV_IDS = ["about", "experience", "work", "skills", "contact"];
+const PROJECT_NAMES = ["Flickrz", "DrawMind", "TryNectar", "Bloom"];
 const PROJECTS = [
   { name: "Flickrz", to: "/projects/flickrz", theme: "orange", tags: ["Multi-Agent Orchestration", "LangGraph", "LoRA", "ComfyUI", "FastAPI"], logo: "/assets/flickrz/logo-flickrz.svg", logoClass: "flickrz" },
   { name: "DrawMind", to: "/projects/drawmind", theme: "green", tags: ["Object Detection", "RT-DETR", "Domain Adaptation", "CVAT"], logo: "/assets/drawmind/drawmind-logo.png", logoClass: "drawmind" },
-  { name: "Bloom", theme: "blue", tags: ["LangGraph", "RAG", "Multi-Agent", "FastAPI"] },
   { name: "TryNectar", to: "/projects/trynectar", theme: "redorange", tags: ["Multimodal AI", "ComfyUI", "LangGraph", "RunPod"], logo: "/assets/trynectar/trynectar-logo.png", logoClass: "trynectar" },
+  { name: "Bloom", theme: "blue", tags: ["LangGraph", "RAG", "Multi-Agent", "FastAPI"] },
 ];
 
-function ProjectCard({ project, copy, role }) {
+function ProjectCard({ project, copy, role, index }) {
   const card = (
-    <article className={`proj-card bracket proj-card--${project.theme}`}>
+    <article className={`proj-card bracket proj-card--${project.theme}`} style={project.to ? undefined : { "--i": index }}>
       <div className="bk-tr" /><div className="bk-bl" />
       <div className="proj-top">
         {project.logo ? (
@@ -32,20 +35,25 @@ function ProjectCard({ project, copy, role }) {
       <div className="case-link">{copy.link} <span className="arrow">→</span></div>
     </article>
   );
-  return project.to ? <Link className="proj-card-link" to={project.to}>{card}</Link> : card;
+  return project.to ? <Link className="proj-card-link" to={project.to} style={{ "--i": index }}>{card}</Link> : card;
 }
 
 export default function LocalizedHome() {
   const { locale } = useLocale();
+  const stageRef = useRef(null);
   if (locale === "en") return <EnglishHome />;
   const copy = HOME_CJK[locale] ?? HOME_COPY[locale] ?? HOME_COPY.en;
+  const handleWorkLinkClick = (e) => {
+    e.preventDefault();
+    if (!scrollToStackCard(0)) document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
       <Seo title={copy.seoTitle} description={copy.seoDescription} />
       <nav><div className="wrap-wide">
         <a className="nav-name" href="#top"><span>{copy.name.toLocaleUpperCase(locale)}</span><span>_</span></a>
-        <ul className="nav-links">{copy.nav.map((label, index) => <li key={NAV_IDS[index]}><a href={`#${NAV_IDS[index]}`}>{label}</a></li>)}</ul>
+        <ul className="nav-links">{copy.nav.map((label, index) => <li key={NAV_IDS[index]}><a href={`#${NAV_IDS[index]}`} onClick={NAV_IDS[index] === "work" ? handleWorkLinkClick : undefined}>{label}</a></li>)}</ul>
         <LanguageSwitcher />
       </div></nav>
 
@@ -57,7 +65,7 @@ export default function LocalizedHome() {
           <div className="hero-meta">{copy.meta}</div>
           <div className="hero-cta">
             <a className="btn linkedin" href="https://www.linkedin.com/in/duydaniel" target="_blank" rel="noopener noreferrer">{copy.linkedin}</a>
-            <a className="btn" href="#work">{copy.seeWork}</a><a className="btn" href="#contact">{copy.contact}</a>
+            <a className="btn" href="#work" onClick={handleWorkLinkClick}>{copy.seeWork}</a><a className="btn" href="#contact">{copy.contact}</a>
           </div>
         </div>
         <div className="rise-delay"><HeroPipeline /></div>
@@ -77,8 +85,13 @@ export default function LocalizedHome() {
         </div></section>
 
         <section id="work"><div className="wrap-wide">
+          <div className="project-stack-stage" ref={stageRef}>
+          <div className="stack-head">
           <div className="section-head"><div className="eyebrow">{copy.workLabel}</div><h2>{copy.workTitle}</h2><p>{copy.workIntro}</p></div>
-          <div className="proj-grid">{PROJECTS.map((project, index) => <ProjectCard project={project} copy={copy.projects[index]} role={copy.projectRoles[index]} key={project.name} />)}</div>
+          <ProjectStackTabs stageRef={stageRef} names={PROJECT_NAMES} />
+          </div>
+          <div className="proj-grid">{PROJECTS.map((project, index) => <ProjectCard project={project} copy={copy.projects[index]} role={copy.projectRoles[index]} index={index} key={project.name} />)}</div>
+          </div>
           <div className="secondary-list">{copy.secondary.map(([title, desc]) => <div className="sec-item" key={title}><div className="sec-title">{title}</div><div className="sec-desc">{desc}</div></div>)}</div>
         </div></section>
 

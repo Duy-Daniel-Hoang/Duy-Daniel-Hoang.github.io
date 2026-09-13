@@ -22,8 +22,7 @@ const PROJECTS = [
 
 function ProjectCard({ project, copy, role, index }) {
   const card = (
-    <article className={`proj-card bracket proj-card--${project.theme}`} style={project.to ? undefined : { "--i": index }}>
-      <div className="bk-tr" />
+    <article className={`proj-card proj-card--${project.theme}`} style={project.to ? undefined : { "--i": index }}>
       <div className="proj-top">
         {project.logo ? (
           <div className="proj-title proj-title--logo"><img className={`proj-logo proj-logo--${project.logoClass}`} src={project.logo} alt={project.name} /></div>

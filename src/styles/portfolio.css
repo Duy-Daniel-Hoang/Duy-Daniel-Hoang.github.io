@@ -193,14 +193,6 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
   z-index:1;
   box-shadow:0 16px 34px -8px #000000c0;
 }
-/* ---------- corner-bracket cards ---------- */
-.bracket{ position:relative; padding:26px; }
-.bracket::before, .bracket .bk-tr{
-  content:""; position:absolute; width:14px; height:14px;
-  border-color:var(--border); transition:border-color .2s ease, width .2s ease, height .2s ease;
-}
-.bracket::before{ top:0; left:0; border-top:2px solid var(--border); border-left:2px solid var(--border); }
-.bracket .bk-tr{ top:0; right:0; border-top:2px solid var(--border); border-right:2px solid var(--border); }
 
 /* ---------- about ---------- */
 .about-body{ font-size:17px; color:#ccd0dc; max-width:66ch; }
@@ -303,7 +295,7 @@ nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between;
 @media ((max-height:700px) or (prefers-reduced-motion:reduce)) and (max-width:760px){
   .proj-grid{ grid-template-columns:1fr; }
 }
-.proj-card{ display:flex; flex-direction:column; height:100%; background-color:var(--surface); background-repeat:no-repeat; }
+.proj-card{ display:flex; flex-direction:column; height:100%; padding:26px; background-color:var(--surface); background-repeat:no-repeat; }
 .proj-card--orange{
   background-image:
     linear-gradient(to top, color-mix(in srgb, #ff8a3d 35%, transparent) 0%, transparent 65%),

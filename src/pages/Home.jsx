@@ -164,9 +164,8 @@ export default function Home() {
 
             <div className="proj-grid">
               <Link className="proj-card-link" to="/projects/flickrz" style={{ "--i": 0 }}>
-                <article className="proj-card bracket proj-card--orange">
-                  <div className="bk-tr" />
-                                    <div className="proj-top">
+                <article className="proj-card proj-card--orange">
+                                                      <div className="proj-top">
                     <div className="proj-title proj-title--logo">
                       <img
                         className="proj-logo proj-logo--flickrz"
@@ -197,9 +196,8 @@ export default function Home() {
               </Link>
 
               <Link className="proj-card-link" to="/projects/drawmind" style={{ "--i": 1 }}>
-                <article className="proj-card bracket proj-card--green">
-                  <div className="bk-tr" />
-                                    <div className="proj-top">
+                <article className="proj-card proj-card--green">
+                                                      <div className="proj-top">
                     <div className="proj-title proj-title--logo">
                       <img
                         className="proj-logo proj-logo--drawmind"
@@ -229,9 +227,8 @@ export default function Home() {
               </Link>
 
               <Link className="proj-card-link" to="/projects/trynectar" style={{ "--i": 2 }}>
-                <article className="proj-card bracket proj-card--redorange">
-                  <div className="bk-tr" />
-                                    <div className="proj-top">
+                <article className="proj-card proj-card--redorange">
+                                                      <div className="proj-top">
                     <div className="proj-title proj-title--logo"><img className="proj-logo proj-logo--trynectar" src="/assets/trynectar/trynectar-logo.png" alt="TryNectar" /></div>
                     <div className="proj-role">AI ENGINEER</div>
                   </div>
@@ -252,9 +249,8 @@ export default function Home() {
                 </article>
               </Link>
 
-              <article className="proj-card bracket proj-card--blue" style={{ "--i": 3 }}>
-                <div className="bk-tr" />
-                                <div className="proj-top">
+              <article className="proj-card proj-card--blue" style={{ "--i": 3 }}>
+                                                <div className="proj-top">
                   <div className="proj-title">Bloom</div>
                   <div className="proj-role">AI ENGINEER</div>
                 </div>

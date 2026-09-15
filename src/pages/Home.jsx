@@ -199,7 +199,7 @@ export default function Home() {
                     <div className="proj-title proj-title--logo">
                       <img
                         className="proj-logo proj-logo--drawmind"
-                        src="/assets/drawmind/drawmind-logo.png"
+                        src="/assets/drawmind/drawmind-logo.webp"
                         alt="DrawMind"
                       />
                     </div>
@@ -227,7 +227,7 @@ export default function Home() {
               <Link className="proj-card-link" to="/projects/trynectar" style={{ "--i": 2 }}>
                 <article className="proj-card proj-card--redorange">
                                                       <div className="proj-top">
-                    <div className="proj-title proj-title--logo"><img className="proj-logo proj-logo--trynectar" src="/assets/trynectar/trynectar-logo.png" alt="TryNectar" /></div>
+                    <div className="proj-title proj-title--logo"><img className="proj-logo proj-logo--trynectar" src="/assets/trynectar/trynectar-logo.webp" alt="TryNectar" /></div>
                     <div className="proj-role">AI ENGINEER</div>
                   </div>
                   <p className="proj-desc">

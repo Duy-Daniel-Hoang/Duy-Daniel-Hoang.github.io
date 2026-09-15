@@ -32,7 +32,7 @@ function LocalizedContent({ c }) {
   return <>
     <Seo title={c.seoTitle} description={c.seoDescription} /><CaseNav label="DRAWMIND" />
     <header className="case-hero"><div className="wrap">
-      <div className="case-kicker">{c.kicker}</div><h1 className="case-title"><img className="case-logo" src="/assets/drawmind/drawmind-logo.png" alt="DrawMind" /></h1>
+      <div className="case-kicker">{c.kicker}</div><h1 className="case-title"><img className="case-logo" src="/assets/drawmind/drawmind-logo.webp" alt="DrawMind" /></h1>
       <p className="case-tagline">{c.taglineA}<strong>{c.taglineStrong}</strong>{c.taglineB}</p>
       <div className="case-meta-grid">
         <div className="meta-item"><div className="meta-label">{c.labels[0]}</div><div className="meta-value">{c.values[0]}</div></div>

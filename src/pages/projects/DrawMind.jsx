@@ -70,7 +70,7 @@ export default function DrawMind() {
         <div className="wrap">
           <div className="case-kicker">CASE STUDY · 02 / 03</div>
           <h1 className="case-title">
-            <img className="case-logo" src="/assets/drawmind/drawmind-logo.png" alt="DrawMind" />
+            <img className="case-logo" src="/assets/drawmind/drawmind-logo.webp" alt="DrawMind" />
           </h1>
           <p className="case-tagline">
             An <strong>AI agent system</strong> built to understand complex technical engineering drawings in depth —

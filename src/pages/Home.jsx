@@ -163,12 +163,15 @@ export default function Home() {
             <div className="proj-grid">
               <Link className="proj-card-link" to="/projects/flickrz" style={{ "--i": 0 }}>
                 <article className="proj-card proj-card--orange">
+                  <img className="proj-card-bg" src="/assets/flickrz/thumbnail.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
                                                       <div className="proj-top">
                     <div className="proj-title proj-title--logo">
                       <img
                         className="proj-logo proj-logo--flickrz"
                         src="/assets/flickrz/logo-flickrz.svg"
                         alt="Flickrz"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <div className="proj-role">AI LEADER</div>
@@ -195,12 +198,15 @@ export default function Home() {
 
               <Link className="proj-card-link" to="/projects/drawmind" style={{ "--i": 1 }}>
                 <article className="proj-card proj-card--green">
+                  <img className="proj-card-bg" src="/assets/drawmind/drawmind-thumbnail.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
                                                       <div className="proj-top">
                     <div className="proj-title proj-title--logo">
                       <img
                         className="proj-logo proj-logo--drawmind"
                         src="/assets/drawmind/drawmind-logo.webp"
                         alt="DrawMind"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <div className="proj-role">AI ENGINEER</div>
@@ -226,8 +232,9 @@ export default function Home() {
 
               <Link className="proj-card-link" to="/projects/trynectar" style={{ "--i": 2 }}>
                 <article className="proj-card proj-card--redorange">
+                  <img className="proj-card-bg" src="/assets/trynectar/trynectar-thumbnail.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
                                                       <div className="proj-top">
-                    <div className="proj-title proj-title--logo"><img className="proj-logo proj-logo--trynectar" src="/assets/trynectar/trynectar-logo.webp" alt="TryNectar" /></div>
+                    <div className="proj-title proj-title--logo"><img className="proj-logo proj-logo--trynectar" src="/assets/trynectar/trynectar-logo.webp" alt="TryNectar" loading="lazy" decoding="async" /></div>
                     <div className="proj-role">AI ENGINEER</div>
                   </div>
                   <p className="proj-desc">

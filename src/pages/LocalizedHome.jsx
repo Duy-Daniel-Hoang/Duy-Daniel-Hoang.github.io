@@ -14,18 +14,19 @@ import { HOME_CJK } from "../i18n/homeCopyCjk.js";
 const NAV_IDS = ["about", "experience", "work", "skills", "contact"];
 const PROJECT_NAMES = ["Flickrz", "DrawMind", "TryNectar", "Bloom"];
 const PROJECTS = [
-  { name: "Flickrz", to: "/projects/flickrz", theme: "orange", tags: ["Multi-Agent Orchestration", "LangGraph", "LoRA", "ComfyUI", "FastAPI"], logo: "/assets/flickrz/logo-flickrz.svg", logoClass: "flickrz" },
-  { name: "DrawMind", to: "/projects/drawmind", theme: "green", tags: ["Object Detection", "RT-DETR", "Domain Adaptation", "CVAT"], logo: "/assets/drawmind/drawmind-logo.webp", logoClass: "drawmind" },
-  { name: "TryNectar", to: "/projects/trynectar", theme: "redorange", tags: ["Multimodal AI", "ComfyUI", "LangGraph", "RunPod"], logo: "/assets/trynectar/trynectar-logo.webp", logoClass: "trynectar" },
+  { name: "Flickrz", to: "/projects/flickrz", theme: "orange", tags: ["Multi-Agent Orchestration", "LangGraph", "LoRA", "ComfyUI", "FastAPI"], logo: "/assets/flickrz/logo-flickrz.svg", logoClass: "flickrz", thumbnail: "/assets/flickrz/thumbnail.webp" },
+  { name: "DrawMind", to: "/projects/drawmind", theme: "green", tags: ["Object Detection", "RT-DETR", "Domain Adaptation", "CVAT"], logo: "/assets/drawmind/drawmind-logo.webp", logoClass: "drawmind", thumbnail: "/assets/drawmind/drawmind-thumbnail.webp" },
+  { name: "TryNectar", to: "/projects/trynectar", theme: "redorange", tags: ["Multimodal AI", "ComfyUI", "LangGraph", "RunPod"], logo: "/assets/trynectar/trynectar-logo.webp", logoClass: "trynectar", thumbnail: "/assets/trynectar/trynectar-thumbnail.webp" },
   { name: "Bloom", theme: "blue", tags: ["LangGraph", "RAG", "Multi-Agent", "FastAPI"] },
 ];
 
 function ProjectCard({ project, copy, role, index }) {
   const card = (
     <article className={`proj-card proj-card--${project.theme}`} style={project.to ? undefined : { "--i": index }}>
+      {project.thumbnail && <img className="proj-card-bg" src={project.thumbnail} alt="" aria-hidden="true" loading="lazy" decoding="async" />}
       <div className="proj-top">
         {project.logo ? (
-          <div className="proj-title proj-title--logo"><img className={`proj-logo proj-logo--${project.logoClass}`} src={project.logo} alt={project.name} /></div>
+          <div className="proj-title proj-title--logo"><img className={`proj-logo proj-logo--${project.logoClass}`} src={project.logo} alt={project.name} loading="lazy" decoding="async" /></div>
         ) : <div className="proj-title">{project.name}</div>}
         <div className="proj-role">{role}</div>
       </div>
